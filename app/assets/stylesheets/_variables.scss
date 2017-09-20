@@ -1,0 +1,17 @@
+$body-background-color: #fff !default;
+$background-color: #fff !default;
+$brand-primary: #512da8 !default;
+$light-gray: #eee !default;
+$text-color: rgba(black, 0.87) !default;
+$secondary-text-color: rgba(opacify($text-color, 1), 0.54) !default;
+$secondary-nav-color: $secondary-text-color !default;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Raleway", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$base-font-size: 1rem !default;
+$base-line-height: 1.5 !default;
+$grid-container-max-width: 45rem !default;
+$action-color: $brand-primary !default;
+$action-hover-color: darken($brand-primary, 15%) !default;
+$button-color: #fff !default;
+$button-background: $action-color !default;
+$button-hover-background: darken($brand-primary, 15%) !default;
+$badge-active-background: $action-color !default;
