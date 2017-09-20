@@ -63,6 +63,7 @@ gem 'rails-timeago'
 gem 'dalli'
 
 ## Deploy
+gem 'figaro'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-rbenv-install', '~> 1.2.0'
 gem 'capistrano-rails', group: :development
