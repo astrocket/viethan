@@ -4,6 +4,8 @@ lock "3.9.1"
 set :application, 'viethan'
 set :repo_url, 'git@github.com:astrocket/viethan.git'
 
+# cap production deploy BRANCH=master
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
 set :migration_role, :app
 
