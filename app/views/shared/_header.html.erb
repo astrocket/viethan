@@ -14,17 +14,25 @@
     <span class="app-nav-text"><%= t 'nav.theme' %>:</span>
     <ul>
       <% themes.each do |(theme_key, theme_name)| %>
-        <%= content_tag :li, class: ('app-current' if theme_key == current_theme), 'data-theme' => theme_key do -%>
-          <% if theme_key == current_theme -%>
-            <span class="app-nav-text"><%= theme_name %></span>
-          <% else -%>
-            <button type="button">
-              <span class="app-nav-text"><%= theme_name %></span>
-              <span class="app-nav-icon"><%= inline_svg 'brightness.svg' %></span>
-            </button>
+          <%= content_tag :li, class: ('app-current' if theme_key == current_theme), 'data-theme' => theme_key do -%>
+              <% if theme_key == current_theme -%>
+                  <span class="app-nav-text"><%= theme_name %></span>
+              <% else -%>
+                  <button type="button">
+                    <span class="app-nav-text"><%= theme_name %></span>
+                    <span class="app-nav-icon"><%= inline_svg 'brightness.svg' %></span>
+                  </button>
+              <% end -%>
           <% end -%>
-        <% end -%>
       <% end %>
+    </ul>
+  </div>
+  <div class="app-nav-locale">
+    <span class="app-nav-text"><%= t('i18n.language') %></span>
+    <ul>
+      <li><%= link_to t('i18n.vietnamese'), '/settings/set_locale/vi' %></li>
+      <li><%= link_to t('i18n.korean'), '/settings/set_locale/ko' %></li>
+      <li><%= link_to t('i18n.english'), '/settings/set_locale/en' %></li>
     </ul>
   </div>
 </header>

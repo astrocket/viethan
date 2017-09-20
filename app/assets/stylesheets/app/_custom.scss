@@ -1,0 +1,30 @@
+.sns-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #3b5998;
+  border-radius: 5px;
+  background: #3b5998;
+  text-decoration: none;
+}
+
+.sns-login:hover {
+  text-decoration: none;
+}
+
+.sns-login img {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  min-height: 35px;
+  margin-bottom: 5px;
+  border-radius: 100%;
+}
+
+.sns-login span {
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-right: 35px;
+}
