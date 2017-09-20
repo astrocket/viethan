@@ -1,0 +1,25 @@
+<%- if controller_name != 'sessions' %>
+  <%= link_to t(".sign_in"), new_session_path(:user) %><br />
+<% end -%>
+
+<%- if Devise.mappings[:user].registerable? && controller_name != 'registrations' %>
+  <%= link_to t(".sign_up"), new_registration_path(:user) %><br />
+<% end -%>
+
+<%- if Devise.mappings[:user].recoverable? && controller_name != 'passwords' %>
+  <%= link_to t(".forgot_your_password"), new_password_path(:user) %><br />
+<% end -%>
+
+<%- if Devise.mappings[:user].confirmable? && controller_name != 'confirmations' %>
+  <%= link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(:user) %><br />
+<% end -%>
+
+<%- if Devise.mappings[:user].lockable? && User.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to t('.didn_t_receive_unlock_instructions'), new_unlock_path(:user) %><br />
+<% end -%>
+
+<%- if Devise.mappings[:user].omniauthable? %>
+  <%- User.omniauth_providers.each do |provider| %>
+    <%= link_to t('.sign_in_with_provider', provider: provider.to_s.titleize), omniauth_authorize_path(:user, provider) %><br />
+  <% end -%>
+<% end -%>

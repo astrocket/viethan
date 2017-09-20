@@ -88,4 +88,25 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configure memcached as the cache store
+  if ENV['MEMCACHE_SERVERS']
+    config.cache_store = :dalli_store,
+        ENV['MEMCACHE_SERVERS'].split(','), {
+            namespace: 'viet',
+            socket_timeout: 1.5,
+            socket_failure_delay: 0.2,
+            down_retry_delay: 60,
+            pool_size: [2, ENV.fetch('WEB_CONCURRENCY', 3).to_i *
+                ENV.fetch('MAX_THREADS', 5).to_i].max
+        }
+  elsif ENV['MEMCACHEDCLOUD_SERVERS']
+    config.cache_store = :dalli_store,
+        ENV['MEMCACHEDCLOUD_SERVERS'].split(','), {
+            username: ENV['MEMCACHEDCLOUD_USERNAME'],
+            password: ENV['MEMCACHEDCLOUD_PASSWORD'],
+            pool_size: [2, ENV.fetch('WEB_CONCURRENCY', 3).to_i *
+                ENV.fetch('MAX_THREADS', 5).to_i].max
+        }
+  end
 end
