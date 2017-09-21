@@ -1,0 +1,11 @@
+<footer>
+  <% if current_user %>
+      <% unless current_user.bot_subscription %>
+          <div class="page-options">
+            <%= link_to '/chat_bot/index', class: 'facebook-messenger-icon' do %>
+                <%= image_tag('facebook-messenger.png') %>
+            <% end %>
+          </div>
+      <% end %>
+  <% end %>
+</footer>

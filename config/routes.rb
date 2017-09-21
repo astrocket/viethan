@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { :omniauth_callbacks => 'users/omniauth_callbacks' }
+
+  get 'chat_bot/index'
+  get 'chat_bot/initiate'
+  get 'chat_bot/tell'
+
+  devise_for :users, controllers: { registrations: 'users/registrations', :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :users, only: [:show]
 

@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ## Views
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
 gem 'kaminari-i18n'
+gem 'table_print', group: :development
 
 ## Logics
 gem 'devise'

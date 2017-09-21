@@ -28,3 +28,44 @@
   text-align: center;
   margin-right: 35px;
 }
+
+.messenger-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #007fff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.messenger-start:hover {
+  text-decoration: none;
+}
+.messenger-start img {
+  width: 25px;
+  min-width: 25px;
+  height: 25px;
+  min-height: 25px;
+}
+.messenger-start span {
+  color: #007fff;
+  width: 100%;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.facebook-messenger-icon {
+  vertical-align: top;
+}
+.facebook-messenger-icon img {
+  height: 20px;
+}
+.facebook-messenger-icon-image {
+  height: 18px;
+}
+
+.page-options {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+}

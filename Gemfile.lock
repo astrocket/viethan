@@ -305,6 +305,7 @@ GEM
     sshkit (1.14.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    table_print (1.5.6)
     thor (0.20.0)
     thread_safe (0.3.6)
     thredded (0.13.4)
@@ -385,6 +386,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  table_print
   thredded (~> 0.13.4)
   turbolinks (~> 5)
   tzinfo-data
