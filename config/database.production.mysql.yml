@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
+
+production:
+  <<: *default
+  database: <%= ENV['VIET_DATABASE_DATABASE'] %>
+  username: <%= ENV['VIET_DATABASE_USERNAME'] %>
+  password: <%= ENV['VIET_DATABASE_PASSWORD'] %>
+  host: <%= ENV['VIET_DATABASE_HOST'] %>
+  port: <%= ENV['VIET_DATABASE_PORT'] %>
+  charset: utf8mb4
+  collation: utf8mb4_bin
+  encoding: utf8mb4
