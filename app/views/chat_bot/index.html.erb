@@ -1,0 +1,15 @@
+<h1>
+  <%= t('settings.subscription.title') %> <%= image_tag('facebook-messenger.png', class: 'facebook-messenger-icon-image') %>
+</h1>
+
+<p>
+  <%= t('settings.subscription.about') %><br>
+  <%= t('settings.subscription.feature.about') %>
+</p>
+
+<ol>
+  <li><%= t('settings.subscription.feature.one') %></li>
+  <li><%= t('settings.subscription.feature.two') %></li>
+</ol>
+<hr>
+<%= render :partial => "components/facebook_subscription" %>
