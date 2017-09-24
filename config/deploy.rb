@@ -45,10 +45,11 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Nginx Configuration
 set :nginx_domains, "vietsinkorea.com"
+set :nginx_redirected_domains, "vietsinkorea.com"
 set :nginx_use_ssl, true
 # Name of SSL certificate file
 # default value: "#{application}.crt"
-set :nginx_ssl_certificate, 'fullchain.pem'
+set :nginx_ssl_certificate, '/etc/letsencrypt/live/vietsinkorea.com/fullchain.pem'
 
 # SSL certificate file path
 # default value: "/etc/ssl/certs"
@@ -56,7 +57,7 @@ set :nginx_ssl_certificate_path, "#{shared_path}/letsencrypt/live/vietsinkorea.c
 
 # Name of SSL certificate private key
 # default value: "#{application}.key"
-set :nginx_ssl_certificate_key, 'privkey.pem'
+set :nginx_ssl_certificate_key, '/etc/letsencrypt/live/vietsinkorea.com/privkey.pem'
 
 # SSL certificate private key path
 # default value: "/etc/ssl/private"
