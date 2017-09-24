@@ -43,6 +43,26 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+# Nginx Configuration
+set :nginx_domains, "vietsinkorea.com"
+set :nginx_use_ssl, true
+# Name of SSL certificate file
+# default value: "#{application}.crt"
+set :nginx_ssl_certificate, 'fullchain.pem'
+
+# SSL certificate file path
+# default value: "/etc/ssl/certs"
+set :nginx_ssl_certificate_path, "#{shared_path}/letsencrypt/live/vietsinkorea.com"
+
+# Name of SSL certificate private key
+# default value: "#{application}.key"
+set :nginx_ssl_certificate_key, 'privkey.pem'
+
+# SSL certificate private key path
+# default value: "/etc/ssl/private"
+set :nginx_ssl_certificate_key_path, "#{shared_path}/letsencrypt/live/vietsinkorea.com"
+
+
 before 'deploy:check:linked_files', 'config:push'
 before 'deploy:starting', 'figaro_yml:setup'
 after 'figaro_yml:setup', 'puma:nginx_config'
