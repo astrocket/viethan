@@ -1,5 +1,5 @@
 server '13.124.158.171', user: 'deploy', roles: %w{app db web}
-set :nginx_server_name, '13.124.158.171'
+set :nginx_server_name, 'vietsinkorea.com'
 
 # server-based syntax
 # ======================
