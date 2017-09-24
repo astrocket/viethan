@@ -45,7 +45,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Nginx Configuration
 set :nginx_domains, "vietsinkorea.com"
-set :nginx_redirected_domains, "vietsinkorea.com"
 set :nginx_use_ssl, true
 
 # Name of SSL certificate file
