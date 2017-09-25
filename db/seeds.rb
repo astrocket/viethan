@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 admin = User.create!(
     display_name: 'Admin',
-    email: "admin@viet.com",
-    password: "123456",
+    email: "admin@vietsinkorea.com",
+    password: "gksruf0923!Y",
     admin: true
 )
 
@@ -18,48 +18,16 @@ messageboard = Thredded::Messageboard.create!(
     description: 'A board is not a board without some posts'
 )
 
-Thredded::TopicForm.new(
-    title: 'My first topic',
-    content: <<-MARKDOWN,
-Hello **world**! :smile: This first post shows some of the Thredded default post
-formatting functionality.
+target_ls = Thredded::MessageboardGroup.create!(
+    name: 'Đời sống sinh hoạt'
+)
 
-### Quote
+life_styles = [['Nhà ở', 'residence', 'ký túc xá, nhà ở, phòng chia sẻ'], ['Địa điểm ăn ngon', 'gourmet', 'Nhà hàng Gourmet tại Hàn Quốc'], ['Đổi tiền - Gửi tiền', 'monetary', 'ngân hàng, chuyển tiền quốc tế tại Hàn Quốc'], ['Chợ đồ cũ', 'buyandsell', 'Mua bán hàng hoá đã qua sử dụng'], ['Giao thông', 'transportation', 'Mẹo sử dụng phương tiện giao thông công cộng ở Hàn Quốc'], ['Du lịch', 'travel', 'Chia sẻ thông tin du lịch']]
 
-> There is nothing either good or bad, but thinking makes it so.
-
-### Image
-
-![lime-cat](https://cloud.githubusercontent.com/assets/216339/19857777/2be75b1e-9f3c-11e6-9845-f30ceb4308a9.jpg)
-
-### Video
-
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-
-### Table
-
-| x | y | x ⊕ y |
-|---|---|:-----:|
-| 1 | 1 |   0   |
-| 1 | 0 |   1   |
-| 0 | 1 |   1   |
-| 0 | 0 |   0   |
-
-### Code
-
-```ruby
-puts 'Hello world'
-```
-
-Code highlighting can be enabled by installing the
-[Markdown Coderay plugin](https://github.com/thredded/thredded-markdown_coderay).
-
-BBCode support (e.g. [b]bold[/b]) can be enabled by installing the
-[BBCode plugin](https://github.com/thredded/thredded-bbcode).
-
-TeX Math support (e.g. $$\phi$$) can be enabled by installing the
-[KaTeX plugin](https://github.com/thredded/thredded-markdown_katex).
-    MARKDOWN
-    user: admin,
-    messageboard: messageboard
-).save
+life_styles.each do |ls|
+  target_ls.messageboards.create!(
+    name: ls[0],
+    slug: ls[1],
+    description: ls[2]
+  )
+end
