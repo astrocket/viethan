@@ -6,36 +6,26 @@ include Facebook::Messenger
 # message.sent_at     # => 2016-04-22 21:30:36 +0200
 # message.text        # => 'Hello, bot!'
 Bot.on :referral do |referral|
-  referral.sender    # => { 'id' => '1008372609250235' }
+  referral.sender # => { 'id' => '1008372609250235' }
   referral.recipient # => { 'id' => '2015573629214912' }
-  referral.sent_at   # => 2016-04-22 21:30:36 +0200
-  referral.ref       # => 'MYPARAM'
+  referral.sent_at # => 2016-04-22 21:30:36 +0200
+  referral.ref # => 'MYPARAM'
 
   User.find_by_key(referral.ref.split('-')[1]).update(mid: referral.sender["id"], bot_subscription: true)
 end
 
 
 Bot.on :message do |message|
-  if message.text == 'Trắng'
-    Bot.deliver(
-        {
-            recipient: message.sender,
-            message: {
-                text: 'Tối'
-            }
-        }, access_token: ENV["ACCESS_TOKEN"])
-  else
 
-    searcher = DeepSearch.new(User.find_by_mid(message.sender["id"]))
+  searcher = DeepSearch.new(User.find_by_mid(message.sender["id"]))
 
-    Bot.deliver(
-        {
-            recipient: message.sender,
-            message: {
-                text: searcher.deep_search(message.text)
-            }
-        }, access_token: ENV["ACCESS_TOKEN"])
-  end
+  Bot.deliver(
+      {
+          recipient: message.sender,
+          message: {
+              text: searcher.deep_search(message.text) || 'No data found.'
+          }
+      }, access_token: ENV["ACCESS_TOKEN"])
 
 end
 
