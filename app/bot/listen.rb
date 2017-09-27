@@ -46,9 +46,9 @@ Bot.on :postback do |postback|
                     type: 'template',
                     payload: {
                         template_type: 'button',
-                        text: "안녕하세요! '연동해줘' 버튼을 누르면 사이트에서 내가 참여한 게시판의 새글 알림을 받아볼 수 있습니다. '검색할래' 를 누르면 메신저에서 바로 원하는 정보를 검색해서 찾아볼 수 있습니다. uid: " + postback.referral.ref + 'mid: ' + postback.sender.to_s,
+                        text: "Rất vui được gặp bạn !",
                         buttons: [
-                            {type: 'postback', title: '연동해줘', payload: 'SYNC_PAYLOAD'}
+                            {type: 'postback', title: 'How to use this ?', payload: 'HOW_TO_USE'}
                         ]
                     }
                 }
@@ -59,14 +59,40 @@ Bot.on :postback do |postback|
 
   end
 
-  if postback.payload == 'SYNC_PAYLOAD'
+  if postback.payload == 'START_SUBSCRIPTION'
+    msg = 'Subscription failed.'
+    msg = "Visit #{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'} now and meet people." if User.find_by_mid(postback.sender["id"]).update(bot_subscription: true)
     Bot.deliver(
         {
             recipient: postback.sender,
             message: {
-                text: '연동이 완료되었습니다 !'
+                text: msg
             }
-        }
+        }, access_token: ENV["ACCESS_TOKEN"]
+    )
+  end
+
+  if postback.payload == 'STOP_SUBSCRIPTION'
+    msg = 'Unsubscription failed.'
+    msg = "You are successfully unsubscribed." if User.find_by_mid(postback.sender["id"]).update(bot_subscription: false)
+    Bot.deliver(
+        {
+            recipient: postback.sender,
+            message: {
+                text: msg
+            }
+        }, access_token: ENV["ACCESS_TOKEN"]
+    )
+  end
+
+  if postback.payload == 'HOW_TO_USE'
+    Bot.deliver(
+        {
+            recipient: postback.sender,
+            message: {
+                text: "You can ask questions to bot by sending messsage.\n This Chatbot is for helping you to use community website for Vietnames students who loves Korea.(https://#{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'})\n If you have any response from your post from website, you will get notified too. If you do not want to receive notofications, click menu -> Đăng ký -> Dừng đăng ký."
+            }
+        }, access_token: ENV["ACCESS_TOKEN"]
     )
   end
 

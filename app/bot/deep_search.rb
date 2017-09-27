@@ -37,7 +37,7 @@ class DeepSearch < Thredded::ApplicationController
       list << "\n\n관련된 자료를 찾을 수 없습니다.\nhttps://#{domain}/forum 에 들어가서 직접 질문을 올려보세요 !"
     end
     topics.each_with_index do |topic, i|
-      list << "\n\n#{i}. #{topic.title}\nhttps://#{domain}/#{topic.messageboard_path}/#{topic.title}"
+      list << "\n\n#{i+1}. #{topic.title}\nhttps://#{domain}/#{topic.messageboard_path}/#{topic.title}"
     end
     return list
   end

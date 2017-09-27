@@ -20,30 +20,25 @@ if Rails.env.production?
                   composer_input_disabled: false,
                   call_to_actions: [
                       {
-                          title: 'My Account',
+                          title: 'Đăng ký',
                           type: 'nested',
                           call_to_actions: [
                               {
-                                  title: "What's a chatbot?",
+                                  title: "Đăng ký tôi",
                                   type: 'postback',
-                                  payload: 'EXTERMINATE'
+                                  payload: 'START_SUBSCRIPTION'
                               },
                               {
-                                  title: 'History',
+                                  title: 'Dừng đăng ký',
                                   type: 'postback',
-                                  payload: 'HISTORY_PAYLOAD'
-                              },
-                              {
-                                  title: 'Contact Info',
-                                  type: 'postback',
-                                  payload: 'CONTACT_INFO_PAYLOAD'
+                                  payload: 'STOP_SUBSCRIPTION'
                               }
                           ]
                       },
                       {
                           type: 'web_url',
-                          title: 'Get some help',
-                          url: 'https://github.com/hyperoslo/facebook-messenger',
+                          title: 'Go to site',
+                          url: "https://#{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'}",
                           webview_height_ratio: 'full'
                       }
                   ]
