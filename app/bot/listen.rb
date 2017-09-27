@@ -48,7 +48,7 @@ Bot.on :postback do |postback|
                         template_type: 'button',
                         text: "Rất vui được gặp bạn !",
                         buttons: [
-                            {type: 'postback', title: 'How to use this ?', payload: 'HOW_TO_USE'}
+                            {type: 'postback', title: '챗봇에 대한 설명 보기', payload: 'HOW_TO_USE'}
                         ]
                     }
                 }
@@ -61,7 +61,7 @@ Bot.on :postback do |postback|
 
   if postback.payload == 'START_SUBSCRIPTION'
     msg = 'Subscription failed.'
-    msg = "Visit #{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'} now and meet people." if User.find_by_mid(postback.sender["id"]).update(bot_subscription: true)
+    msg = "알림 신청이 완료되었습니다.\nVisit https://#{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'}" if User.find_by_mid(postback.sender["id"]).update(bot_subscription: true)
     Bot.deliver(
         {
             recipient: postback.sender,
@@ -74,7 +74,7 @@ Bot.on :postback do |postback|
 
   if postback.payload == 'STOP_SUBSCRIPTION'
     msg = 'Unsubscription failed.'
-    msg = "You are successfully unsubscribed." if User.find_by_mid(postback.sender["id"]).update(bot_subscription: false)
+    msg = "알림이 꺼졌습니다. 언제든지 메뉴를 통해서 재신청이 가능합니다." if User.find_by_mid(postback.sender["id"]).update(bot_subscription: false)
     Bot.deliver(
         {
             recipient: postback.sender,
@@ -90,7 +90,7 @@ Bot.on :postback do |postback|
         {
             recipient: postback.sender,
             message: {
-                text: "You can ask questions to bot by sending messsage.\n This Chatbot is for helping you to use community website for Vietnames students who loves Korea.(https://#{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'})\n If you have any response from your post from website, you will get notified too. If you do not want to receive notofications, click menu -> Đăng ký -> Dừng đăng ký."
+                text: "한국 베트남 유학생 커뮤니티 챗봇입니다.\n 이 챗봇과 커뮤니티 사이트를 통해서 유학생활에 필요한 정보들을 얻어갈 수 있습니다.(https://#{ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'})\n 사이트에 자신이 올린 글에 답변이 달리면, 알림 메시지를 받아볼 수 있습니다. 만약 알림을 받기를 원하지 않는다면, 아래의 메뉴 -> Đăng ký -> Dừng đăng ký 를 눌러서 알림을 중지할 수 있습니다."
             }
         }, access_token: ENV["ACCESS_TOKEN"]
     )
