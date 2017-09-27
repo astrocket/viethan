@@ -7,7 +7,7 @@ vi:
   sns:
     facebook: facebook
   brand:
-    name: 베트남커뮤니티(벳남어)
+    name: VietsInKorea
   common:
     time_ago: "%{time} 전"
   nav:
@@ -23,12 +23,12 @@ vi:
     notifier:
       facebook_messenger: facebook messenger bot
     subscription:
-      title: Become a friend with our Facebook Messenger AI Bot
-      about: Subscribe our Facebook Messenger AI Bot now and meet our friend, Astro
+      title: Hãy trở thành nguười bạn của Facebook Messenger Chatbot
+      about: Theo dõi Facebook Messenger Chatbot và bắt đầu một cuộc gặp cùng chúng tôi
       feature:
-        about: Our AI Bot comes with these functionalities now and it will have more soon !
+        about: Our ChatBot comes with these functionalities now and it will have more soon !
         one: You can get automatic subscription Messages based on your notification settings.
-        two: You can ask AI Bot directly about any kind of informations including Korean Culture, Visas, Universities, Jobs and etc.
+        two: You can ask ChatBot directly about any kind of informations including Korean Culture, Visas, Universities, Jobs and etc.
       start: Start conversation
   thredded:
     content_moderation_states:

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'chat_bot/index'
   get 'chat_bot/initiate'
   get 'chat_bot/tell'

@@ -25,18 +25,19 @@ Bot.on :message do |message|
             }
         }, access_token: ENV["ACCESS_TOKEN"])
   else
+
+    searcher = DeepSearch.new(current_user)
+
     Bot.deliver(
         {
             recipient: message.sender,
             message: {
-                text: message.text + 'by bot' + "#{User.first.display_name}" + "https://www.naver.com" + message.to_json.to_s
+                text: searcher.deep_search(message.text)
             }
         }, access_token: ENV["ACCESS_TOKEN"])
   end
 
 end
-
-
 
 
 Bot.on :postback do |postback|

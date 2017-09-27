@@ -23,10 +23,10 @@ en:
     notifier:
       facebook_messenger: facebook messenger bot
     subscription:
-      title: Become a friend with our Facebook Messenger AI Bot
-      about: Subscribe our Facebook Messenger AI Bot now and meet our friend, Astro
+      title: Become a friend with our Facebook Messenger ChatBot
+      about: Subscribe our Facebook Messenger ChatBot now and meet us
       feature:
-        about: Our AI Bot comes with these functionalities now and it will have more soon !
+        about: Our ChatBot comes with these functionalities now and it will have more soon !
         one: You can get automatic subscription Messages based on your notification settings.
-        two: You can ask AI Bot directly about any kind of informations including Korean Culture, Visas, Universities, Jobs and etc.
+        two: You can ask ChatBot directly about any kind of informations including Korean Culture, Visas, Universities, Jobs and etc.
       start: Start conversation
