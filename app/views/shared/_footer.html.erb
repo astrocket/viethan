@@ -8,7 +8,7 @@
           </div>
       <% end %>
   <% else %>
-      <% unless controller.controller_name == 'users' %>
+      <% unless controller.controller_name == 'registrations' or controller.controller_name == 'sessions' %>
           <div class="page-options">
             <%= link_to t('nav.sign_in_to_post'), main_app.new_user_session_path, class: 'facebook-messenger-icon' %>
           </div>
