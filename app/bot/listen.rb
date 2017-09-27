@@ -23,7 +23,7 @@ Bot.on :message do |message|
       {
           recipient: message.sender,
           message: {
-              text: searcher.deep_search(message.text) || 'No data found.'
+              text: searcher.deep_search(message.text)
           }
       }, access_token: ENV["ACCESS_TOKEN"])
 
