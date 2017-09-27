@@ -7,5 +7,9 @@
             <% end %>
           </div>
       <% end %>
+  <% else %>
+      <div class="page-options">
+        <%= link_to t('nav.sign_in_to_post'), main_app.new_user_session_path, class: 'facebook-messenger-icon' %>
+      </div>
   <% end %>
 </footer>

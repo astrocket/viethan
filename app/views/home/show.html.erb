@@ -1,5 +1,9 @@
-<h1>VietsInKorea.com là một trang web chia sẻ tất tần tật các thông tin liên quan đến du học Hàn Quốc.  Tại đây các bạn có thể cùng nhau hỏi đáp các vấn đề liên quan đến du học Hàn Quốc.</h1>
+<p><%= t('pages.home.introduction') %></p>
 
-<p>Check out the
-  <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
+<p>
+  <b><%= link_to t('nav.forums'), thredded.root_path %></b>
 </p>
+
+<%= link_to '/chat_bot/index', class: 'facebook-messenger-icon' do %>
+    <%= image_tag('facebook-messenger.png') %>
+<% end %>

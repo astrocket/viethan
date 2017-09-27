@@ -2,6 +2,7 @@ require "facebook/messenger"
 
 class ChatBotController < ApplicationController
   include Facebook::Messenger
+  before_action :authenticate_user!, only: [:index, :tell]
 
   def index
     redirect_to root_path if current_user.bot_subscription
