@@ -17,15 +17,26 @@ end
 
 Bot.on :message do |message|
 
-  searcher = DeepSearch.new(User.find_by_mid(message.sender["id"]))
+  if message.text == 'Ping'
+    Bot.deliver(
+        {
+            recipient: message.sender,
+            message: {
+                text: 'Pong'
+            }
+        }, access_token: ENV["ACCESS_TOKEN"])
+  else
+    searcher = DeepSearch.new(User.find_by_mid(message.sender["id"]))
 
-  Bot.deliver(
-      {
-          recipient: message.sender,
-          message: {
-              text: searcher.deep_search(message.text)
-          }
-      }, access_token: ENV["ACCESS_TOKEN"])
+    Bot.deliver(
+        {
+            recipient: message.sender,
+            message: {
+                text: searcher.deep_search(message.text)
+            }
+        }, access_token: ENV["ACCESS_TOKEN"])
+
+  end
 
 end
 
