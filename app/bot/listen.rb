@@ -25,6 +25,9 @@ Bot.on :message do |message|
             }
         }, access_token: ENV["ACCESS_TOKEN"])
   else
+
+    DeepSearch.new(current_user)
+
     Bot.deliver(
         {
             recipient: message.sender,
@@ -35,8 +38,6 @@ Bot.on :message do |message|
   end
 
 end
-
-
 
 
 Bot.on :postback do |postback|

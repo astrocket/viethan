@@ -70,6 +70,7 @@ gem 'rails-timeago'
 gem 'dalli'
 gem 'omniauth-facebook'
 gem 'facebook-messenger'
+gem 'rails_admin', '~> 1.2'
 
 ## Deploy
 gem 'figaro'
