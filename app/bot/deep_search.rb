@@ -32,9 +32,9 @@ class DeepSearch < Thredded::ApplicationController
 
   def build_template(query , topics)
     domain = ENV["VIET_SITE_DOMAIN"] || 'localhost:3000'
-    list = "#{query}에 대한 검색 결과는 다음과 같습니다. \n-----\n https://#{domain}/forum 에 들어가서 직접 질문을 올려보세요 !"
+    list = "#{query}에 대한 검색 결과는 다음과 같습니다."
     unless topics
-      list << "관련된 자료를 찾을 수 없습니다."
+      list << "관련된 자료를 찾을 수 없습니다. \n-----\n https://#{domain}/forum 에 들어가서 직접 질문을 올려보세요 !"
     end
     topics.each do |topic|
       list << "제목 #{topic.title} \n-----\n https://#{domain}/#{topic.messageboard_path}/#{topic.title}\n---------"
