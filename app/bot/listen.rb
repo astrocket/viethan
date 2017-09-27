@@ -26,7 +26,7 @@ Bot.on :message do |message|
         }, access_token: ENV["ACCESS_TOKEN"])
   else
 
-    searcher = DeepSearch.new(User.find_by_mid(message.sender))
+    searcher = DeepSearch.new(User.find_by_mid(message.sender["id"]))
 
     Bot.deliver(
         {
