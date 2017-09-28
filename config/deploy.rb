@@ -54,6 +54,7 @@ set :nginx_ssl_certificate_key, '/etc/letsencrypt/live/vietsinkorea.com/privkey.
 before 'deploy:check:linked_files', 'config:push'
 before 'deploy:starting', 'figaro_yml:setup'
 after 'figaro_yml:setup', 'puma:nginx_config'
+set :keep_releases, 5
 
 namespace :deploy do
   after :restart, :clear_cache do

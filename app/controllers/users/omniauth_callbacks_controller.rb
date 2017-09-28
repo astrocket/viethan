@@ -12,6 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
+      Rails.logger.info(@user.errors.inspect)
       redirect_to new_user_registration_url, notice: '개발자에게 문의해주세요. ※페북로그인관련※'
     end
   end
