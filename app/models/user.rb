@@ -26,7 +26,7 @@ class User < ApplicationRecord
       create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.email = auth.info.email
+        user.email = auth.info.email || "#{SecureRandom.hex}@astrocket.com"
         user.password = Devise.friendly_token[0,20]
         user.display_name = auth.info.name   # assuming the user model has a name
         user.image = auth.info.image # assuming the user model has an image
