@@ -25,7 +25,7 @@ class DeepSearch < Thredded::ApplicationController
             .search_query(query)
             .order_recently_posted_first
             .includes(:categories, :last_user, :user)
-            .page(current_page)
+            .page(current_page).first(6)
     )
     return topics.to_a # Thredded::TopicsPageView's instance method
   end

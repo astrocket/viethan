@@ -1,0 +1,73 @@
+<div class="navbar d-flex flex-column justify-content-center align-items-center">
+  <a class="navbar-brand" href="/">
+    <%= image_tag("vink_long_logo.png", class: "vink-long-logo") %>
+  </a>
+  <div class="vink-menu" id="vink-menu-id">
+    <ul class="nav justify-content-center">
+      <li class="nav-item active">
+        <a class="nav-link" href="/forum"><%= t('nav.forums') %> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/chats"><%= t('nav.chattings') %> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/">캘린더 <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<hr class="mb-20 mt-0">
+
+<a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+  <div class="page-top-options">
+    <i class="icon ion-android-menu"></i>
+  </div>
+</a>
+
+<div id="sidenavBack" class="sidenav-back">
+</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="icon ion-ios-close-empty"></i></a>
+  <div class="sidenav-profile">
+    <%= render 'components/user_nav_profile' %>
+  </div>
+  <hr style="margin: 0px;">
+  <div class="sidenav-menu">
+    <div class="sidenav-body">
+      <div class="sidenav-body-unit">
+        <div class="app-nav-locale ml-0">
+          <span class="app-nav-text"><%= t('i18n.language') %></span>
+          <ul>
+            <li><%= link_to t('i18n.vietnamese'), '/settings/set_locale/vi' %></li>
+            |
+            <li><%= link_to t('i18n.korean'), '/settings/set_locale/ko' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sidenav-footer">
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  function openNav() {
+    document.getElementById("sidenavBack").style.display = "block";
+    document.getElementById("sidenavBack").style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    document.getElementById("mySidenav").style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("sidenavBack").style.display = "none";
+    document.getElementById("sidenavBack").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.getElementById("mySidenav").style.marginLeft = "0px";
+  }
+
+  document.getElementById('sidenavBack')
+      .addEventListener('click', function (event) {
+        closeNav();
+      });
+</script>

@@ -1,0 +1,18 @@
+<div class="chat-container" id="chatContainer" data-chat-id="<%= @chat.id %>" data-current-user-id="<%= current_user.id %>">
+  <div class="vink-messages" id="vink-messages">
+    welcome !
+
+  </div>
+
+  <h1>Messages</h1>
+
+  <div class="message-box">
+    <ul id='messages'>
+      <%= render @chat.messages %>
+    </ul>
+  </div>
+
+  <br>
+  <%= render 'messages/form', {chat: @chat} %>
+
+</div>

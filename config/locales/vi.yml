@@ -2,8 +2,8 @@ vi:
   i18n:
     language: Ngôn ngữ
     english: EN
-    vietnamese: VN
-    korean: KR
+    vietnamese: Tiếng Việt
+    korean: 한국어
   sns:
     facebook: facebook
   brand:
@@ -16,6 +16,7 @@ vi:
   nav:
     edit_my_account: Edit my account
     forums: :thredded.nav.all_messageboards
+    chattings: Trò chuyện
     sign_in: :devise.shared.links.sign_in
     sign_in_to_post: Đăng nhập để viết bài của riêng bạn.
     sign_out: Đăng xuất
@@ -121,7 +122,7 @@ vi:
         no_results_message: No users with name starting with %{query}
         results_message: Users with names starting with %{query}
     nav:
-      all_messageboards: Bảng thông báo
+      all_messageboards: Diễn đàn
       edit_messageboard: Edit Messageboard
       edit_post: Edit Post
       edit_private_topic: :thredded.nav.edit_topic

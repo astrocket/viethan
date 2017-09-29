@@ -1,0 +1,13 @@
+<%= simple_form_for(@chat, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :room_title %>
+    <%= f.input :category %>
+    <%= f.input :banned %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

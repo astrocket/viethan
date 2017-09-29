@@ -1,0 +1,37 @@
+.vink-long-logo {
+  height: 40px;
+}
+
+a {
+  color: black !important;
+}
+
+a:hover {
+  color: #ffd400 !important;
+  text-decoration: none !important;
+}
+
+.navbar-brand{
+  margin: 0px auto !important;
+}
+.vink-menu {padding: 0.5rem;}
+.vink-menu li.menu-item a {
+  border-bottom: none;
+}
+.vink-menu li.menu-item.active a {
+  border-bottom: 2px solid #ffd400;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.page-options {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+}
+.page-top-options {
+  padding: 12px 18px;
+  position: absolute;
+  top: 0;
+  font-size: 25px;
+}
