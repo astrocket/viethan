@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :content, label: false %>
+    <%= f.input :content, as: :string, label: false %>
   </div>
 
   <div class="form-actions" style="display: none;">
@@ -13,14 +13,13 @@
 <script type="text/javascript">
   document.addEventListener("turbolinks:load", function() {
     $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight);
-    $('#message_content').onkeydown = function(event) {
-      if (event.keyCode == 13 && !event.shiftKey && event.target.value.trim() != '') {
-        $("#new_message").bind("ajax:send", function (event, xhr, status) {
-          $('#message_content').val('');
-          $('#message_content').focus();
-        });
-      }
-    }
   });
 
+  if (event.keyCode == 13 && !event.shiftKey && event.target.value.trim() != '') {
+    $("#new_message").bind("ajax:send", function(event,xhr,status){
+      $('#message_content').val('');
+      $('#message_content').focus();
+    });
+  }
 </script>
+

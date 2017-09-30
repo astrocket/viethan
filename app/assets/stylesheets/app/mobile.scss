@@ -1,20 +1,31 @@
 @media (max-width: 48rem) {
   div.thredded--messageboards-group {
     display: block;
+    padding-left: 10px;
   }
 
   a.thredded--messageboard {
     display: inline-block;
     margin-bottom: 4px;
-    padding: 10px;
+    padding: 6px;
   }
 
   h2.thredded--messageboard--title {
     margin: 0 auto;
+    font-size: 13px;
   }
 
   h3.thredded--messageboard--meta, p.thredded--messageboard--description, p.thredded--messageboard--byline {
     display: none;
+  }
+  h3.thredded--messageboards-group--title {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 9px;
+  }
+  .thredded--user-navigation .thredded--user-navigation--settings .thredded--icon, .thredded--user-navigation .thredded--user-navigation--private-topics .thredded--icon, .thredded--user-navigation .thredded--user-navigation--moderation .thredded--icon {
+    display: block;
+    width: 1.2rem;
+    height: 2rem;
   }
   .facebook-messenger-icon-image {
     height: 11px !important;
