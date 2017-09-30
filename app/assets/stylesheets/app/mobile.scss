@@ -97,4 +97,20 @@
     padding-left: 5px;
     padding-right: 5px;
   }
+
+  .thredded--navigation {
+    margin-bottom: 20px;
+  }
+  .thredded--topic-header {
+    border: 1px solid #ececec;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .thredded--topic-header .thredded--topic-header--follow-info {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .thredded--topic-header .thredded--topic-header--follow-info span {
+    display: none;
+  }
 }

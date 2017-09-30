@@ -38,12 +38,12 @@ vi:
     notifier:
       facebook_messenger: facebook messenger bot
     subscription:
-      title: Hãy trở thành nguười bạn của Facebook Messenger Chatbot
-      about: Bắt đầu trò chuyện với Bot trò chuyện của chúng tôi.
+      title: Hãy trở thành người bạn của Facebook Messenger Chatbot
+      about: Hãy bắt đầu cuộc "trò chuyện" với Facebook Messenger Chatbot để
       feature:
         one: Hỏi thông tin
         two: Nhận thông báo về bài đăng của bạn.
-      start: Start conversation
+      start: Trò  chuyện
   thredded:
     content_moderation_states:
       content_blocked_notice: Blocked
@@ -255,7 +255,7 @@ vi:
         results_in_messageboard_message_html: Search results for <q>%{query}</q> in %{messageboard}
         results_message_html: Search results for <q>%{query}</q>
         search_in_all_messageboards_btn: Search everywhere
-      started_by_html: Started %{time_ago} by %{user}
+      started_by_html: Bắt đầu %{time_ago} bởi %{user}
       sticky:
         label: Sticky
       unfollow: Stop following

@@ -7,7 +7,6 @@ a {
 }
 
 a:hover {
-  color: #ffd400 !important;
   text-decoration: none !important;
 }
 
@@ -94,16 +93,36 @@ a:hover {
   max-height: 50px;
 }
 
-.thredded--post#post_1 {
 
+.thredded--messageboard {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-.thredded--post#post_1 header {
-  display: none;
+.thredded--messageboard:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-.thredded--post#post_1 .thredded--post--content {
-  background: grey;
-  padding: 2px;
+
+.thredded--post {
+  padding-left: 15px;
+  border-left: 3px solid #cbcbcb;
 }
-.thredded--post#post_1 .thredded--post--content p {
-  margin-bottom: 0px;
+.thredded--post#post_1 {
+  padding-left: 0px;
+  border-left: none;
+}
+.thredded--post .thredded--post--user {
+  font-size: 14px;
+}
+
+.thredded--topic-header {
+  border: 1px solid #ececec;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.thredded--topic-header--follow-info form.thredded--topic-header--follow-info--unfollow {
+  top: 0px;
+  position: relative;
 }
