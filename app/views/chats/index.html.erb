@@ -1,36 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="vink-nav" id="vink-chat-nav-id">
+  <ul class="nav justify-content-center">
+    <li class="nav-item <%= params[:category] == 'all' ? 'active' : '' %>">
+      <%= link_to t('chat.category_all'), '?category=all', class: 'nav-link' %>
+    </li>
+    <li class="nav-item <%= params[:category] == '1' ? 'active' : '' %>">
+      <%= link_to t('chat.category_1'), '?category=1', class: 'nav-link' %>
+    </li>
+    <li class="nav-item <%= params[:category] == '2' ? 'active' : '' %>">
+      <%= link_to t('chat.category_2'), '?category=2', class: 'nav-link' %>
+    </li>
+    <li class="nav-item <%= params[:category] == '3' ? 'active' : '' %>">
+      <%= link_to t('chat.category_3'), '?category=3', class: 'nav-link' %>
+    </li>
+  </ul>
+</div>
+<div class="vink-list" id="vink-list-id">
+  <%= render 'list' %>
+</div>
 
-<h1>Chats</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Room title</th>
-      <th>Category</th>
-      <th>Banned</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @chats.each do |chat| %>
-      <tr>
-        <td><%= chat.user %></td>
-        <td><%= chat.room_title %></td>
-        <td><%= chat.category %></td>
-        <td><%= chat.banned %></td>
-        <td><%= link_to 'Show', chat %></td>
-        <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
-        <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Chat', new_chat_path %>
-
-
-<%= render @chats %>
+<div class="page-right-options">
+  <%= link_to new_chat_path do %>
+      <i class="icon ion-plus" aria-hidden="true"></i>
+  <% end %>
+</div>

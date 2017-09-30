@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   before_action :set_chat
 
@@ -30,7 +31,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save!
-        ActionCable.server.broadcast "chat_channel_#{@chat.id}", content: @message.content, message_user: @message.user
+        ActionCable.server.broadcast "chat_channel_#{@chat.id}", message: @message, sender: @message.user
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }

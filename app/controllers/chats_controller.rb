@@ -1,10 +1,27 @@
 class ChatsController < ApplicationController
   before_action :set_chat, only: [:show, :edit, :update, :destroy]
 
+  PAGE_UNIT = 10
+
   # GET /chats
   # GET /chats.json
   def index
-    @chats = Chat.all
+
+    if params[:category]
+      case params[:category]
+        when 'all'
+          @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT)
+        else
+          @chats = Chat.where(category: params[:category]).paginate(:page => params[:page], :per_page => PAGE_UNIT)
+      end
+    else
+      @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT)
+    end
+
+    if request.xhr? && params[:pageless] == 'true'
+      render :partial => @chats
+    end
+
   end
 
   # GET /chats/1
@@ -66,13 +83,13 @@ class ChatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_chat
-      @chat = Chat.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_chat
+    @chat = Chat.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def chat_params
-      params.require(:chat).permit(:user_id, :room_title, :category, :banned)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def chat_params
+    params.require(:chat).permit(:user_id, :room_title, :category, :banned, :anonymous)
+  end
 end

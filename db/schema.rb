@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170929071227) do
     t.string "room_title"
     t.string "category"
     t.boolean "banned", default: false
+    t.boolean "anonymous", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_chats_on_user_id"

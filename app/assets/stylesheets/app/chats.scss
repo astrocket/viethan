@@ -109,9 +109,7 @@
 }
 
 .vink-messages {
-  max-height: calc( 100vh );
-  padding-top: 15px;
-  padding-bottom: 50px;
+  max-height: calc( 60vh );
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -210,10 +208,13 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.vink-messages-unit-info span:first-child {
-  color: rgba(255, 212, 0, 0.7);
+.vink-messages-unit-info .vink-messages-anonymous {
+  color: grey;
 }
-.vink-messages-unit-info span:last-child {
+.vink-messages-unit-info .vink-messages-unread {
+  color: grey;
+}
+.vink-messages-unit-info  .vink-messages-time {
   color: grey;
 }
 
@@ -258,12 +259,12 @@
   word-wrap: break-word;
 }
 
-#current-user-template {
-  display: block;
+#current_user_template {
+  display: none;
 }
 
-#other-user-template {
-  display: block;
+#other_user_template {
+  display: none;
 }
 
 @media (min-width: 576px) {

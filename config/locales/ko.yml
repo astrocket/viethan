@@ -6,6 +6,16 @@ ko:
     korean: 한국어
   sns:
     facebook: 페이스북
+  chat:
+    new_chat: 새 채팅방 만들기
+    room_title: 채팅방 제목
+    category: 카테고리
+    anonymous: 익명 채팅
+    intro_message: 오늘도 즐거운 하루 되세요 !
+    category_1: 재미
+    category_2: 토론
+    category_3: 고민
+    category_all: 전체
   brand:
     name: VietsINKorea
   common:

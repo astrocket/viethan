@@ -1,18 +1,45 @@
 <div class="chat-container" id="chatContainer" data-chat-id="<%= @chat.id %>" data-current-user-id="<%= current_user.id %>">
-  <div class="vink-messages" id="vink-messages">
-    welcome !
-
-  </div>
-
-  <h1>Messages</h1>
-
   <div class="message-box">
-    <ul id='messages'>
+    <div id='vink_messages' class="vink-messages">
       <%= render @chat.messages %>
-    </ul>
+    </div>
   </div>
-
   <br>
   <%= render 'messages/form', {chat: @chat} %>
+</div>
 
+<div id="current_user_template">
+  <div data-receipt-code="0" class="mailboxer_receipt vink-messages-unit">
+    <div class="vink-outgoing-messages-unit">
+      <div class="vink-messages-unit-message">
+        <div class="vink-messages-unit-info">
+          <% if @chat.anonymous %>
+              <span class="vink-messages-anonymous"></span>
+          <% else %>
+              <span class="vink-messages-unread"></span>
+          <% end %>
+          <span class="vink-messages-time"></span>
+        </div>
+        <p class="vink-messages-unit-body"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="other_user_template">
+  <div class="mailboxer_receipt vink-messages-unit">
+    <div class="vink-incoming-messages-unit">
+      <div class="vink-messages-unit-message-incoming">
+        <p class="vink-messages-unit-body"></p>
+        <div class="vink-messages-unit-info">
+          <% if @chat.anonymous %>
+              <span class="vink-messages-anonymous"></span>
+          <% else %>
+              <span class="vink-messages-unread"></span>
+          <% end %>
+          <span class="vink-messages-time"></span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -62,6 +62,7 @@ gem 'table_print', group: :development
 gem "bootstrap", "~> 4.0.0.beta"
 gem "jquery-rails"
 gem "ionicons-rails"
+gem "will_paginate", "~> 3.1.0" # pagination gem
 
 ## Logics
 gem 'devise'

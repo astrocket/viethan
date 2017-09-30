@@ -24,14 +24,72 @@ a:hover {
   transition: all 0.2s ease;
 }
 
+.vink-nav {padding: 1rem; margin-bottom: 1rem;}
+.vink-nav li.nav-item a {
+  border-bottom: none;
+}
+.vink-nav li.nav-item.active a {
+  border-bottom: 2px solid #ffd400;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.form-actions {
+  text-align: right;
+}
+
 .page-options {
   position: fixed;
   left: 15px;
   bottom: 15px;
 }
+
+.page-right-options {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
 .page-top-options {
   padding: 12px 18px;
   position: absolute;
   top: 0;
   font-size: 25px;
+}
+
+.page-right-options a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #3d3137;
+  text-decoration: none;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  margin-bottom: 5px;
+  background-color: #ffd400;
+
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.35);
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.35);
+}
+.page-right-options a:hover{
+  color: white !important;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.35);
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.35);
+}
+.page-right-options i {
+  font-size: 25px;
+}
+
+.vink-sticky-submit-container {
+  width: 100vw;
+  max-width: 670px;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  max-height: 50px;
 }

@@ -1,0 +1,5 @@
+<div id="results">
+  <%= render @chats %>
+</div>
+<%= will_paginate @chats, :previous_label => '<-', :next_label => '->' %>
+<%= pageless(@chats.total_pages, chats_path(pageless: 'true'), "#results") %>

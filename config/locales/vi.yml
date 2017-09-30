@@ -6,6 +6,16 @@ vi:
     korean: 한국어
   sns:
     facebook: facebook
+  chat:
+    new_chat: Cuộc trò chuyện mới
+    anonymous: Chat nặc danh
+    intro_message: Chúc một ngày tốt lành.
+    room_title: Tiêu đề phòng
+    category: Thể loại
+    category_1: Vui vẻ
+    category_2: Thảo luận
+    category_3: Tư vấn
+    category_all: Mọi điều
   brand:
     name: VietsINKorea
   common:
