@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  room_title: MyString
+  category: MyString
+  banned: false
+
+two:
+  user: two
+  room_title: MyString
+  category: MyString
+  banned: false

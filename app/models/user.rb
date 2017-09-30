@@ -3,6 +3,8 @@ class User < ApplicationRecord
   before_validation :uniq_display_name!, on: :create
   before_create :generate_verification_key
 
+  has_many :chats, dependent: :destroy
+
   def display_name=(value)
     super(value ? value.strip : nil)
   end
@@ -26,7 +28,7 @@ class User < ApplicationRecord
       create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.email = auth.info.email || "#{SecureRandom.hex}@astrocket.com"
+        user.email = auth.info.email || "#{SecureRandom.hex}@vietsinkorea.com"
         user.password = Devise.friendly_token[0,20]
         user.display_name = auth.info.name   # assuming the user model has a name
         user.image = auth.info.image # assuming the user model has an image

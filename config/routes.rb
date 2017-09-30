@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :messages
+  resources :chats
   mount RailsAdmin::Engine => '/astrocket', as: 'rails_admin'
   get 'chat_bot/index'
   get 'chat_bot/initiate'
@@ -15,6 +17,6 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
   mount Facebook::Messenger::Server, at: 'bot'
 
-  root to: 'home#show'
+  root to: 'home#index'
 
 end

@@ -1,0 +1,43 @@
+current_time = ->
+  d = new Date();
+  dateTime = d.getHours() + ':' + d.getMinutes();
+  return dateTime
+
+render_current_user_message = (data) ->
+  $('#current_user_template .vink-messages-unit-body').html data.message.content
+  $('#current_user_template .vink-messages-time').html current_time();
+  $('#current_user_template .vink-messages-unread').html data.sender.display_name;
+  template = $('#current_user_template').html()
+  $('#vink_messages').append template
+  $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight)
+  return
+
+render_other_user_message = (data) ->
+  $('#other_user_template .vink-messages-unit-body').html data.message.content
+  $('#other_user_template .vink-messages-time').html current_time();
+  $('#current_user_template .vink-messages-unread').html data.sender.display_name;
+  template = $('#other_user_template').html()
+  $('#vink_messages').append template
+  $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight)
+  return
+
+current_user_id = ->
+  $('#chatContainer').data 'current-user-id'
+
+chat_id = ->
+  $('#chatContainer').data 'chat-id'
+
+options = { channel: "ChatChannel", chat_id: chat_id() }
+App.chat = App.cable.subscriptions.create options,
+  connected: ->
+# Called when the subscription is ready for use on the server
+
+  disconnected: ->
+# Called when the subscription has been terminated by the server
+
+  received: (data) ->
+  # Called when there's incoming data on the websocket for this channel
+    if data.sender.id == current_user_id()
+      render_current_user_message(data)
+    else
+      render_other_user_message(data)

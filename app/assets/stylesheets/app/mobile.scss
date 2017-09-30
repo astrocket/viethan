@@ -1,0 +1,89 @@
+@media (max-width: 48rem) {
+  div.thredded--messageboards-group {
+    display: block;
+  }
+
+  a.thredded--messageboard {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: 10px;
+  }
+
+  h2.thredded--messageboard--title {
+    margin: 0 auto;
+  }
+
+  h3.thredded--messageboard--meta, p.thredded--messageboard--description, p.thredded--messageboard--byline {
+    display: none;
+  }
+  .facebook-messenger-icon-image {
+    height: 11px !important;
+  }
+  .vink-nav {padding: 1rem 0rem;}
+  .vink-nav li.nav-item a {
+    border-bottom: none;
+    font-size: 13px;
+    padding: 0.3rem 0.75rem;
+  }
+  .vink-nav li.nav-item.active a {
+    border-bottom: 2px solid #ffd400;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .vink-long-logo {
+    height: 30px;
+  }
+  .vink-messages-unit {
+    margin-bottom: 6px;
+  }
+
+  .vink-messages-unit-body {
+    margin: 0px;
+    padding: 2px 5px;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    max-width: 70vw;
+    word-wrap: break-word;
+  }
+
+  .vink-messages-unit-profile {
+    margin-bottom: 10px;
+  }
+
+  .vink-messages-unit-profile p {
+    margin: 0px 5px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+
+  .vink-messages-unit-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .vink-messages-unit-message {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .vink-messages-unit-message-incoming {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .vink-messages-unit-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 9px;
+    min-width: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

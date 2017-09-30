@@ -2,10 +2,20 @@ ko:
   i18n:
     language: 언어
     english: EN
-    vietnamese: VN
-    korean: KR
+    vietnamese: Tiếng Việt
+    korean: 한국어
   sns:
     facebook: 페이스북
+  chat:
+    new_chat: 새 채팅방 만들기
+    room_title: 채팅방 제목
+    category: 카테고리
+    anonymous: 익명 채팅
+    intro_message: 오늘도 즐거운 하루 되세요 !
+    category_1: 재미
+    category_2: 토론
+    category_3: 고민
+    category_all: 전체
   brand:
     name: VietsINKorea
   common:
@@ -16,6 +26,7 @@ ko:
   nav:
     edit_my_account: 프로필 수정하기
     forums: :thredded.nav.all_messageboards
+    chattings: 채팅
     sign_in: :devise.shared.links.sign_in
     sign_in_to_post: 지금 로그인 하고 게시물을 올려보세요
     sign_out: 로그아웃
@@ -121,7 +132,7 @@ ko:
         no_results_message: No users with name starting with %{query}
         results_message: Users with names starting with %{query}
     nav:
-      all_messageboards: 게시판 전체
+      all_messageboards: 게시판
       edit_messageboard: Edit Messageboard
       edit_post: Edit Post
       edit_private_topic: :thredded.nav.edit_topic

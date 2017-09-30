@@ -1,0 +1,23 @@
+<%= content_tag_for(:div, chat, class: 'vink-chat-unit') do |chat| %>
+    <%= link_to chat_path(id: chat.id), data: {turbolinks: false} do %>
+        <div class="vink-conversations-unit d-flex flex-row justify-content-between align-items-start">
+          <div class="vink-conversations-profile d-flex">
+            <% if chat.anonymous %>
+                <%= image_tag "#{Gravatar.src(chat.user.email, 156, 'mm')}" %>
+            <% else %>
+                <%= image_tag "#{Thredded.avatar_url.call(chat.user)}" %>
+            <% end %>
+          </div>
+          <div class="vink-conversations-main">
+            <span><%= chat.room_title %></span>
+            <span><%= chat.messages.last.content %></span>
+          </div>
+          <div class="vink-conversations-info">
+            <span class="vink-conversations-info-time"><%= time_ago(chat.recent_message.present? ? chat.recent_message.created_at : chat.created_at) %></span>
+            <div class="vink-conversations-info-alarm">
+              <span><%= chat.messages.count %></span>
+            </div>
+          </div>
+        </div>
+    <% end %>
+<% end %>

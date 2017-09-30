@@ -59,6 +59,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
 gem 'kaminari-i18n'
 gem 'table_print', group: :development
+gem "bootstrap", "~> 4.0.0.beta"
+gem "jquery-rails"
+gem "ionicons-rails"
+gem "will_paginate", "~> 3.1.0" # pagination gem
 
 ## Logics
 gem 'devise'
@@ -71,6 +75,7 @@ gem 'dalli'
 gem 'omniauth-facebook'
 gem 'facebook-messenger'
 gem 'rails_admin', '~> 1.2'
+gem 'record_tag_helper', '~> 1.0'
 
 ## Deploy
 gem 'figaro'

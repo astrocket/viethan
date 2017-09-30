@@ -1,0 +1,28 @@
+<div class="user-nav-profile">
+  <% if current_user %>
+      <%= link_to '/' do %>
+          <div class="user-nav-photo">
+            <%= image_tag "#{Thredded.avatar_url.call(current_user)}", class: 'd-block img-fluid vink-profile-image' %>
+          </div>
+      <% end %>
+  <% else %>
+      <%= link_to '/' do %>
+          <%= link_to '/' do %>
+            <div class="logo-nav-photo">
+              <%= image_tag("vink_long_logo.png", class: "d-block img-fluid vink-profile-image") %>
+            </div>
+          <% end %>
+      <% end %>
+  <% end %>
+</div>
+
+<div class="user-nav-nickname">
+  <% if current_user %>
+      <%= link_to current_user.display_name, user_path(current_user) %>
+      |
+      <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
+                  method: :delete %>
+  <% else %>
+      <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
+  <% end %>
+</div>

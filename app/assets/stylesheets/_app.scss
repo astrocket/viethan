@@ -1,7 +1,3 @@
-@import "app/layout";
-@import "app/typography";
-@import "app/forms";
-@import "app/header";
-@import "app/flash-messages";
-@import "app/mobile";
-@import "app/custom";
+@import "app/*";
+@import "bootstrap";
+@import 'ionicons';

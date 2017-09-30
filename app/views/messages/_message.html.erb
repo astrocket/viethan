@@ -1,0 +1,33 @@
+<% if message.user == current_user %>
+    <div class="vink-messages-unit">
+      <div class="vink-outgoing-messages-unit">
+        <div class="vink-messages-unit-message">
+          <div class="vink-messages-unit-info">
+            <% if message.chat.anonymous %>
+                <span class="vink-messages-anonymous">random</span>
+            <% else %>
+                <span class="vink-messages-unread"><%= message.user.display_name %></span>
+            <% end %>
+            <span class="vink-messages-time"><%= time_ago(message.created_at) %></span>
+          </div>
+          <p class="vink-messages-unit-body"><%= message.content %></p>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <div class="vink-messages-unit">
+      <div class="vink-incoming-messages-unit">
+        <div class="vink-messages-unit-message-incoming">
+          <p class="vink-messages-unit-body"><%= message.content %></p>
+          <div class="vink-messages-unit-info">
+            <% if message.chat.anonymous %>
+                <span class="vink-messages-anonymous">random</span>
+            <% else %>
+                <span class="vink-messages-unread"><%= message.user.display_name %></span>
+            <% end %>
+            <span class="vink-messages-time"><%= time_ago(message.created_at) %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

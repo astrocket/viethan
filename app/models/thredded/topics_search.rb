@@ -5,7 +5,6 @@ module Thredded
     def initialize(query, scope)
       @terms = Thredded::SearchParser.new(query).parse
       @scope = scope
-
       @search_categories = @search_users = @search_text = nil
     end
 
