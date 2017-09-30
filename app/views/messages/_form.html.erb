@@ -13,13 +13,14 @@
 <script type="text/javascript">
   document.addEventListener("turbolinks:load", function() {
     $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight);
-    if (event.keyCode == 13 && !event.shiftKey && event.target.value.trim() != '') {
-      $("#new_message").bind("ajax:send", function(event,xhr,status){
-        $('#message_content').val('');
-        $('#message_content').focus();
-      });
+    $('#message_content').onkeydown = function(event) {
+      if (event.keyCode == 13 && !event.shiftKey && event.target.value.trim() != '') {
+        $("#new_message").bind("ajax:send", function (event, xhr, status) {
+          $('#message_content').val('');
+          $('#message_content').focus();
+        });
+      }
     }
   });
 
 </script>
-
