@@ -24,7 +24,6 @@ class DeepSearch < Thredded::ApplicationController
         policy_scope(Thredded::Topic.where(messageboard_id: policy_scope(Thredded::Messageboard.all).pluck(:id)))
             .search_query(query)
             .order_recently_posted_first
-            .includes(:categories, :last_user, :user)
             .page(current_page).first(6)
     )
     return topics.to_a # Thredded::TopicsPageView's instance method

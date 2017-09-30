@@ -39,11 +39,10 @@ vi:
       facebook_messenger: facebook messenger bot
     subscription:
       title: Hãy trở thành nguười bạn của Facebook Messenger Chatbot
-      about: Theo dõi Facebook Messenger Chatbot và bắt đầu một cuộc gặp cùng chúng tôi
+      about: Bắt đầu trò chuyện với Bot trò chuyện của chúng tôi.
       feature:
-        about: Our ChatBot comes with these functionalities now and it will have more soon !
-        one: You can get automatic subscription Messages based on your notification settings.
-        two: You can ask ChatBot directly about any kind of informations including Korean Culture, Visas, Universities, Jobs and etc.
+        one: Hỏi thông tin
+        two: Nhận thông báo về bài đăng của bạn.
       start: Start conversation
   thredded:
     content_moderation_states:

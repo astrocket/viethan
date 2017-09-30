@@ -39,9 +39,9 @@ a:hover {
 }
 
 .page-options {
-  position: fixed;
-  left: 15px;
-  bottom: 15px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
 
 .page-right-options {
@@ -92,4 +92,18 @@ a:hover {
   bottom: 0px;
   left: 0px;
   max-height: 50px;
+}
+
+.thredded--post#post_1 {
+
+}
+.thredded--post#post_1 header {
+  display: none;
+}
+.thredded--post#post_1 .thredded--post--content {
+  background: grey;
+  padding: 2px;
+}
+.thredded--post#post_1 .thredded--post--content p {
+  margin-bottom: 0px;
 }
