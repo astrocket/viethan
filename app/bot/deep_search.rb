@@ -19,7 +19,7 @@ class DeepSearch < Thredded::ApplicationController
   def exclude_topics(query)
     query = query.to_s
     topics = policy_scope(Thredded::Topic.where(messageboard_id: policy_scope(Thredded::Messageboard.all).pluck(:id)))
-        .search_query(query)
+        .search_query(query).order_recently_posted_first
     return topics.to_a # Thredded::TopicsPageView's instance method
   end
 
