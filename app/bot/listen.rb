@@ -66,7 +66,9 @@ Bot.on :postback do |postback|
             }
         }, access_token: ENV["ACCESS_TOKEN"])
 
-    User.find_by_key(postback.referral.ref.split('-')[1]).update(mid: postback.sender["id"], bot_subscription: true)
+    if postback.referral.present?
+      User.find_by_key(postback.referral.ref.split('-')[1]).update(mid: postback.sender["id"], bot_subscription: true)
+    end
 
   end
 
