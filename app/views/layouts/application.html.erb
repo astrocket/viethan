@@ -2,6 +2,14 @@
 <html>
 <head>
   <title><%= page_title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta property="og:image" content="<%= image_url('vink_fb_long.png') %>">
+  <meta property="og:title" content="VinK">
+  <meta property="og:description" content="Website for Vietnamese students in Korea">
+
+  <meta name="image" content="<%= image_url('vink_fb_long.png') %>">
+  <meta name="title" content="VinK" />
+  <meta name="description" content="Website for Vietnamese students in Korea" />
   <%= favicon_link_tag 'favicon.ico' %>
   <%= favicon_link_tag 'apple-touch-icon.png',
                        rel: 'apple-touch-icon', type: 'image/png' %>
@@ -13,10 +21,6 @@
                              async: !Rails.application.config.assets.debug,
                              defer: true,
                              'data-turbolinks-track': 'reload' %>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <meta name="title" content="VINK" />
-  <meta name="description" content="Website for Vietnamese students in Korea" />
 </head>
 
 <body class="app">
