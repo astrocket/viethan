@@ -159,6 +159,11 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
+    judge (2.1.1)
+      rails (>= 3.1)
+    judge-simple_form (1.0.0)
+      judge (~> 2.0)
+      simple_form (>= 2.0)
     jwt (1.5.6)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
@@ -415,6 +420,7 @@ DEPENDENCIES
   ionicons-rails
   jbuilder (~> 2.5)
   jquery-rails
+  judge-simple_form
   kaminari-i18n
   listen (>= 3.0.5, < 3.2)
   omniauth-facebook

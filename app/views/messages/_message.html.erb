@@ -4,13 +4,22 @@
         <div class="vink-messages-unit-message">
           <div class="vink-messages-unit-info">
             <% if message.chat.anonymous %>
-                <span class="vink-messages-anonymous">random</span>
+                <span class="vink-messages-anonymous"></span>
             <% else %>
                 <span class="vink-messages-unread"><%= message.user.display_name %></span>
             <% end %>
             <span class="vink-messages-time"><%= time_ago(message.created_at) %></span>
           </div>
           <p class="vink-messages-unit-body"><%= message.content %></p>
+          <% if message.chat.anonymous %>
+              <div class="d-flex vink-messages-unit-profile">
+                <%= image_tag "#{Gravatar.src(message.user.email, 156, 'retro')}" %>
+              </div>
+          <% else %>
+              <div class="d-flex vink-messages-unit-profile">
+                <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+              </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -18,10 +27,19 @@
     <div class="vink-messages-unit">
       <div class="vink-incoming-messages-unit">
         <div class="vink-messages-unit-message-incoming">
+          <% if message.chat.anonymous %>
+              <div class="d-flex vink-messages-unit-profile">
+                <%= image_tag "#{Gravatar.src(message.user.email, 156, 'retro')}" %>
+              </div>
+          <% else %>
+              <div class="d-flex vink-messages-unit-profile">
+                <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+              </div>
+          <% end %>
           <p class="vink-messages-unit-body"><%= message.content %></p>
           <div class="vink-messages-unit-info">
             <% if message.chat.anonymous %>
-                <span class="vink-messages-anonymous">random</span>
+                <span class="vink-messages-anonymous"></span>
             <% else %>
                 <span class="vink-messages-unread"><%= message.user.display_name %></span>
             <% end %>

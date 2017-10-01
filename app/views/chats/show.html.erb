@@ -5,7 +5,9 @@
     </div>
   </div>
   <br>
-  <%= render 'messages/form', {chat: @chat} %>
+  <div class="vink-sticky-submit-container">
+    <%= render 'messages/form', {chat: @chat} %>
+  </div>
 </div>
 
 <div id="current_user_template">
@@ -21,6 +23,7 @@
           <span class="vink-messages-time"></span>
         </div>
         <p class="vink-messages-unit-body"></p>
+        <div class="d-flex vink-messages-unit-profile"></div>
       </div>
     </div>
   </div>
@@ -30,6 +33,7 @@
   <div class="mailboxer_receipt vink-messages-unit">
     <div class="vink-incoming-messages-unit">
       <div class="vink-messages-unit-message-incoming">
+        <div class="d-flex vink-messages-unit-profile"></div>
         <p class="vink-messages-unit-body"></p>
         <div class="vink-messages-unit-info">
           <% if @chat.anonymous %>

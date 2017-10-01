@@ -109,7 +109,7 @@
 }
 
 .vink-messages {
-  max-height: calc( 60vh );
+  max-height: calc( 100vh - 200px );
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -169,7 +169,8 @@
 }
 
 .vink-messages-unit-profile {
-  margin-bottom: 10px;
+  margin: auto 5px;
+  align-items: center;
 }
 
 .vink-messages-unit-profile p {
@@ -265,6 +266,16 @@
 
 #other_user_template {
   display: none;
+}
+
+#new_message {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#message_content {
+  margin-bottom: 0px;
 }
 
 @media (min-width: 576px) {

@@ -29,9 +29,11 @@ class MessagesController < ApplicationController
     @message = @chat.messages.new(message_params)
     @message.user = current_user
 
+    @profile_image = @chat.anonymous ? Gravatar.src(@message.user.email, 156, 'retro') : Thredded.avatar_url.call(@message.user)
+
     respond_to do |format|
       if @message.save!
-        ActionCable.server.broadcast "chat_channel_#{@chat.id}", message: @message, sender: @message.user
+        ActionCable.server.broadcast "chat_channel_#{@chat.id}", message: @message, sender: @message.user, profile_image: @profile_image
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }

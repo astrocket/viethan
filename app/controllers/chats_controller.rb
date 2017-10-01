@@ -10,12 +10,12 @@ class ChatsController < ApplicationController
     if params[:category]
       case params[:category]
         when 'all'
-          @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT)
+          @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT).order(updated_at: :desc)
         else
-          @chats = Chat.where(category: params[:category]).paginate(:page => params[:page], :per_page => PAGE_UNIT)
+          @chats = Chat.where(category: params[:category]).paginate(:page => params[:page], :per_page => PAGE_UNIT).order(:updated_at)
       end
     else
-      @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT)
+      @chats = Chat.all.paginate(:page => params[:page], :per_page => PAGE_UNIT).order(updated_at:  :desc)
     end
 
     if request.xhr? && params[:pageless] == 'true'
