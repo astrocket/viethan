@@ -1,17 +1,15 @@
 <div class="user-nav-profile">
   <% if current_user %>
-      <%= link_to '/' do %>
+      <%= link_to user_path(current_user) do %>
           <div class="user-nav-photo">
             <%= image_tag "#{Thredded.avatar_url.call(current_user)}", class: 'd-block img-fluid vink-profile-image' %>
           </div>
       <% end %>
   <% else %>
-      <%= link_to '/' do %>
-          <%= link_to '/' do %>
-            <div class="logo-nav-photo">
-              <%= image_tag("vink_long_logo.png", class: "d-block img-fluid vink-profile-image") %>
-            </div>
-          <% end %>
+      <%= link_to main_app.new_user_session_path do %>
+          <div class="logo-nav-photo">
+            <%= image_tag("vink_long_logo.png", class: "d-block img-fluid vink-profile-image") %>
+          </div>
       <% end %>
   <% end %>
 </div>

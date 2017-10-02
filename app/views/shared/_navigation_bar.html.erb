@@ -5,20 +5,20 @@
   <div class="vink-menu" id="vink-menu-id">
     <ul class="nav justify-content-center">
       <li class="nav-item active">
-        <a class="nav-link" href="/forum"><%= t('nav.forums') %> <span class="sr-only">(current)</span></a>
+        <a class="nav-link vink-link" href="/forum"><%= t('nav.forums') %> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/chats?category=all"><%= t('nav.chattings') %> <span class="sr-only">(current)</span></a>
+        <a class="nav-link vink-link" href="/chats?category=all"><%= t('nav.chattings') %> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">캘린더 <span class="sr-only">(current)</span></a>
+        <a class="nav-link vink-link" href="/">News <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </div>
 <hr class="mb-20 mt-0">
 
-<a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+<a href="javascript:void(0)" class="openbtn vink-link" onclick="openNav()">
   <div class="page-top-options">
     <i class="icon ion-android-menu"></i>
   </div>
@@ -50,8 +50,6 @@
     </div>
   </div>
 </div>
-
-
 
 <script>
   function openNav() {

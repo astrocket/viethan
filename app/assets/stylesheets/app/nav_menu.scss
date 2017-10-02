@@ -67,11 +67,22 @@
   padding: 0px;
   text-decoration: none;
   font-size: 15px;
-  color: #292b2c;
+  color: #292b2c !important;
   transition: 0.3s;
 }
-
-
+.sidenav a:hover {
+  color: #ffd400 !important;
+  text-decoration: none !important;
+}
+.vink-link {
+  color: #292b2c;
+  padding: 0px;
+  text-decoration: none;
+}
+.vink-link:hover {
+  color: #ffd400 !important;
+  text-decoration: none !important;
+}
 
 .sidenav .closebtn {
   position: absolute;

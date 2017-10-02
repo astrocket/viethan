@@ -18,6 +18,9 @@
                 time_ago: time_ago(messageboard.last_topic.last_post_at),
                 user: messageboard.last_user.thredded_display_name %>
         </p>
+        <% if messageboard.last_topic.last_post_at > Time.now - 1.day %>
+          <span class="thredded-messageboard-new">New</span>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>

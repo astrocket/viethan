@@ -1,6 +1,20 @@
 <% post, content = post_and_content if local_assigns.key?(:post_and_content) %>
 <%= content_tag :article, id: dom_id(post), class: 'thredded--post' do %>
-  <%= render 'thredded/posts_common/actions', post: post %>
-  <%= render 'thredded/posts_common/header_with_topic', post: post %>
-  <%= content || render('thredded/posts/content', post: post) %>
+    <%= link_to '/forum' + messageboard_topics_path(post.to_model.messageboard), class: 'thredded--messageboard' do %>
+        <header class="thredded--messageboard--header">
+          <h2 class="thredded--messageboard--title"><%= post.to_model.messageboard.name %></h2>
+          <h3 class="thredded--messageboard--meta">
+            <%= t 'thredded.messageboard.topics_and_posts_counts',
+                  topics_count: number_with_delimiter(post.to_model.messageboard.topics_count),
+                  posts_count: number_with_delimiter(post.to_model.messageboard.posts_count) %>
+          </h3>
+        </header>
+        <p class="thredded--messageboard--description"><%= post.to_model.messageboard.description %></p>
+        <% if post.to_model.messageboard.last_topic.last_post_at > Time.now - 1.day %>
+            <span class="thredded-messageboard-new">New</span>
+        <% end %>
+    <% end %>
+    <%= render 'thredded/posts_common/actions', post: post %>
+    <%= render 'thredded/posts_common/header_with_topic', post: post %>
+    <%= content || render('thredded/posts/content', post: post) %>
 <% end %>

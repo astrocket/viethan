@@ -20,6 +20,7 @@ ko:
     name: VinK
   common:
     time_ago: "%{time} 전"
+    general: 일반
   pages:
     home:
       introduction: VietsINKorea.com 은 한국에 거주하거나, 한국 유학을 준비하는 베트남 학생들을 위한 커뮤니티 사이트 입니다. 함께 참여해서 좋은 커뮤니티를 만들었으면 하는 마음에 만들었습니다. 여러분의 많은 참여 부탁드립니다. 깜언 !

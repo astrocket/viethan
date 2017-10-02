@@ -127,5 +127,11 @@
   .thredded--messageboard:hover {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
-
+  .thredded-messageboard-new {
+    position: absolute;
+    top: -2px;
+    right: -10px;
+    color: #ffd400;
+    font-size: 7px;
+  }
 }

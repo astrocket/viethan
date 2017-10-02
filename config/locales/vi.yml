@@ -20,17 +20,20 @@ vi:
     name: VinK
   common:
     time_ago: "%{time} 전"
+    general: Chung
   pages:
     home:
       introduction: VietsINKorea.com là một trang web chia sẻ tất tần tật các thông tin liên quan đến du học Hàn Quốc.  Tại đây các bạn có thể cùng nhau hỏi đáp các vấn đề liên quan đến du học Hàn Quốc.
   nav:
-    edit_my_account: Edit my account
+    edit_my_account: Chỉnh sửa Hồ sơ
     forums: :thredded.nav.all_messageboards
     chattings: Trò chuyện
     sign_in: :devise.shared.links.sign_in
     sign_in_to_post: Đăng nhập để viết bài của riêng bạn.
     sign_out: Đăng xuất
     theme: Màu
+    profile: Hồ sơ
+    send_message: Gửi tin nhắn
   themes:
     day: Trắng
     night: Tối
@@ -103,8 +106,8 @@ vi:
         update_btn_submitting: :thredded.form.update_btn_submitting
       index:
         page_title: Messageboards
-      last_updated_by_html: Updated %{time_ago} <cite>by %{user}</cite>
-      topics_and_posts_counts: "%{topics_count} topics / %{posts_count} posts"
+      last_updated_by_html: Cập nhật %{time_ago} <cite>bởi %{user}</cite>
+      topics_and_posts_counts: "%{topics_count} Đề tài / %{posts_count} Bài viết"
       update: :thredded.form.update
       updated_notice: Messageboard has been updated
     messageboard_group:
@@ -214,7 +217,8 @@ vi:
         create_btn: Bắt đầu tin nhắn cá nhân
         title: Bạn không có tin nhắn cá nhân.
       updated_notice: Title updated
-    recent_activity: Recent activity
+    recent_activity: Hoạt động gần đây
+
     search:
       form:
         btn_submit: :thredded.search.form.label
@@ -273,6 +277,6 @@ vi:
       started_topics_count:
         one: Started one topic
         other: Started %{count} topics
-      user_posted_in_topic_html: "%{user_link} posted in %{topic_link}"
+      user_posted_in_topic_html: "%{user_link} Đã đăng %{topic_link}"
       user_since_html: User since %{time_ago}
-      user_started_topic_html: "%{user_link} started %{topic_link}"
+      user_started_topic_html: "%{user_link} Đã bắt đầu %{topic_link}"

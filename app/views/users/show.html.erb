@@ -2,29 +2,64 @@
   user = @user
   user_detail = user.thredded_user_detail
 %>
-<h1>
-  <%= image_tag Thredded.avatar_url.call(user), class: 'thredded--user--avatar' %><%= user.thredded_display_name %>
-</h1>
-<ul>
-  <% if user == current_user %>
-    <%= link_to t('nav.edit_my_account'), edit_user_registration_path %>
-  <% end %>
-  <li><%= t 'thredded.users.user_since_html', time_ago: time_ago(user.created_at) %></li>
-  <% if user_detail.last_seen_at %>
-      <li><%= t 'thredded.users.last_active_html', time_ago: time_ago(user_detail.last_seen_at) %></li>
-  <% end %>
-  <% if user_detail.topics_count > 0 %>
-      <li><%= t 'thredded.users.started_topics_count', count: user_detail.topics_count %></li>
-  <% end %>
-  <% if user_detail.posts_count > 0 %>
-      <li><%= t 'thredded.users.posts_count', count: user_detail.posts_count %></li>
-  <% end %>
-</ul>
 <% posts_page = Thredded.posts_page_view(
     scope: user.thredded_posts.order_newest_first.limit(5),
     current_user: current_user) %>
-<% if posts_page.present? %>
-    <h2><%= t 'thredded.users.recent_activity' %></h2>
-    <%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
-                                               locals: { posts: posts_page } %>
-<% end %>
+
+<div class="row">
+  <div class="col-12 col-md-3">
+    <div class="card mb-3">
+      <div class="card-header"><%= t('nav.profile') %></div>
+      <div class="card-body">
+        <h4 class="card-title"><%= image_tag Thredded.avatar_url.call(user), class: 'thredded--user--avatar' %>&nbsp;<%= user.thredded_display_name %></h4>
+        <p class="card-text">
+        <ul style="list-style-type: none; padding: 0; margin: 0;">
+          <li><%= t 'thredded.users.user_since_html', time_ago: time_ago(user.created_at) %></li>
+          <% if user_detail.last_seen_at %>
+              <li><%= t 'thredded.users.last_active_html', time_ago: time_ago(user_detail.last_seen_at) %></li>
+          <% end %>
+          <% if user_detail.topics_count > 0 %>
+              <li><%= t 'thredded.users.started_topics_count', count: user_detail.topics_count %></li>
+          <% end %>
+          <% if user_detail.posts_count > 0 %>
+              <li><%= t 'thredded.users.posts_count', count: user_detail.posts_count %></li>
+          <% end %>
+        </ul>
+        </p>
+      </div>
+      <div class="card-footer bg-transparent">
+        <% if user == current_user %>
+            <%= link_to t('nav.edit_my_account'), edit_user_registration_path, class: 'btn btn-outline-warning btn-block' %>
+        <% else %>
+            <%= link_to t('nav.send_message'), "/forum/private-topics/new?target_user=#{user.display_name}", class: 'btn btn-outline-warning btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-9">
+    <div class="card mb-3">
+      <div class="card-header">
+        Coming soon
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Have a nice day !</h4>
+        <p class="card-text">Today is going to be a great day :)</p>
+      </div>
+    </div>
+  </div>
+  <% if posts_page.present? %>
+      <div class="col-12">
+        <div class="card mb-3">
+          <div class="card-header">
+            <%= t 'thredded.users.recent_activity' %>
+          </div>
+          <div class="card-body">
+            <%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
+                                                       locals: {posts: posts_page} %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+

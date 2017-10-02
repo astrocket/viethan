@@ -2,7 +2,7 @@
   height: 40px;
 }
 
-a {
+h1, h2, h3, h4, h5, h6 {
   color: black !important;
 }
 
@@ -124,4 +124,19 @@ a:hover {
 .thredded--topic-header--follow-info form.thredded--topic-header--follow-info--unfollow {
   top: 0px;
   position: relative;
+}
+.thredded-messageboard-new {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  color: #ffd400;
+  font-size: 16px;
+}
+
+.thredded--messageboards-group a {
+  color: #292b2c;
+}
+
+.thredded--messageboards-group a:hover {
+  color: #292b2c;
 }
