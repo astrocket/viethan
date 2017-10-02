@@ -1,20 +1,16 @@
 <% post, content = post_and_content if local_assigns.key?(:post_and_content) %>
-<%= content_tag :article, id: dom_id(post), class: 'thredded--post' do %>
-    <%= link_to '/forum' + messageboard_topics_path(post.to_model.messageboard), class: 'thredded--messageboard' do %>
-        <header class="thredded--messageboard--header">
-          <h2 class="thredded--messageboard--title"><%= post.to_model.messageboard.name %></h2>
-          <h3 class="thredded--messageboard--meta">
-            <%= t 'thredded.messageboard.topics_and_posts_counts',
-                  topics_count: number_with_delimiter(post.to_model.messageboard.topics_count),
-                  posts_count: number_with_delimiter(post.to_model.messageboard.posts_count) %>
-          </h3>
-        </header>
-        <p class="thredded--messageboard--description"><%= post.to_model.messageboard.description %></p>
-        <% if post.to_model.messageboard.last_topic.last_post_at > Time.now - 1.day %>
-            <span class="thredded-messageboard-new">New</span>
-        <% end %>
+
+
+<header class="vink-post-unit d-flex flex-column justify-content-between">
+  <%= link_to(post.permalink_path, class: 'vink-link') do %>
+      <div class="vink-post-unit-content w-100 d-flex flex-row justify-content-between align-items-center">
+        <%= content %>
+      </div>
+  <% end %>
+  <div class="vink-post-unit-profile d-flex flex-row justify-content-end align-items-center">
+    <span class="vink-post-unit-time-ago"><%= time_ago post.created_at %></span>&nbsp;|&nbsp;
+    <%= link_to user_path(post.user), class: 'vink-link d-flex align-items-center' do %>
+        <span><%= post.user.display_name %>&nbsp;</span><%= image_tag Thredded.avatar_url.call(post.user) %>
     <% end %>
-    <%= render 'thredded/posts_common/actions', post: post %>
-    <%= render 'thredded/posts_common/header_with_topic', post: post %>
-    <%= content || render('thredded/posts/content', post: post) %>
-<% end %>
+  </div>
+</header>

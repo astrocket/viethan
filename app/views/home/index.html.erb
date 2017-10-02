@@ -1,5 +1,5 @@
+
 <p><%= t('pages.home.introduction') %></p>
 
-<p>
-  <b><%= link_to t('nav.forums'), thredded.root_path %></b>
-</p>
+<%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
+                                           locals: {posts: @posts_page_view} %>

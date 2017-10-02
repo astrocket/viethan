@@ -1,5 +1,5 @@
 <%= content_tag_for(:div, chat, class: 'vink-chat-unit') do |chat| %>
-    <%= link_to chat_path(id: chat.id), data: {turbolinks: false} do %>
+    <%= link_to chat_path(id: chat.id), class: 'vink-link', data: {turbolinks: false} do %>
         <div class="vink-conversations-unit d-flex flex-row justify-content-between align-items-start">
           <div class="vink-conversations-profile d-flex">
             <% if chat.anonymous %>
