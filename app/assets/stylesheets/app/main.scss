@@ -144,8 +144,11 @@ a:hover {
   border: 1px solid #e6ecf0;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  .card-body {
+    padding: 10px;
+  }
   .card-footer {
-    padding: 5px;
+    padding: 10px;
     background-color: transparent;
   }
   img {
