@@ -4,11 +4,13 @@
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107422464-1"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments)};
-    gtag('js', new Date());
+    document.addEventListener('turbolinks:load', function(event) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
 
-    gtag('config', 'UA-107422464-1');
+      gtag('config', 'UA-107422464-1');
+    });
   </script>
 
   <title><%= page_title %></title>
