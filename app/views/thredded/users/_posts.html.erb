@@ -4,4 +4,6 @@
   TODO: Use a Cell instead. https://github.com/apotonick/cells
 %>
 <%# @param posts [Thredded::PostsPageView] %>
-<%= render_posts posts, partial: 'thredded/users/post', content_partial: 'thredded/posts/content' %>
+<div class="card-columns">
+  <%= render_posts posts, partial: 'thredded/users/post', content_partial: 'thredded/posts/content' %>
+</div>

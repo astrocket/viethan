@@ -235,10 +235,10 @@ vi:
       followed_by_noone: No one is following this topic
       followed_notice: You are now following this topic
       following:
-        auto: You are following this topic because auto-follow is enabled.
-        manual: You are following this topic.
-        mentioned: You are following this topic because you were mentioned on it.
-        posted: You are following this topic because you posted to it.
+        auto: Bạn đang theo dõi chủ đề này vì theo dõi tự động được bật.
+        manual: Bạn đang theo dõi chủ đề này.
+        mentioned: Bạn đang theo dõi chủ đề này bởi vì bạn đã được đề cập trong đó.
+        posted: Bạn đang theo dõi chủ đề này vì bạn đã đăng nó.
       form:
         categories_placeholder: Categories
         content_label: :thredded.posts.form.content_label
@@ -262,7 +262,7 @@ vi:
       started_by_html: Bắt đầu %{time_ago} bởi %{user}
       sticky:
         label: Sticky
-      unfollow: Stop following
+      unfollow: Chặn thông báo fb sau khi trả lời
       unfollowed_notice: You are no longer following this topic
       updated_notice: Topic updated
     users:
