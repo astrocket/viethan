@@ -2,16 +2,20 @@
 <html>
 <head>
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107422464-1"></script>
-  <script>
-    document.addEventListener('turbolinks:load', function(event) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
+  <% if Rails.env == "production" %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107422464-1"></script>
+      <script>
+        document.addEventListener('turbolinks:load', function (event) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments)
+          };
+          gtag('js', new Date());
 
-      gtag('config', 'UA-107422464-1');
-    });
-  </script>
+          gtag('config', 'UA-107422464-1');
+        });
+      </script>
+  <% end %>
 
   <title><%= page_title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -22,8 +26,8 @@
   <meta property="og:type" content="website">
   <meta property="fb:app_id" content="171946573378871">
   <meta name="image" content="<%= image_url('vink_fb_long.png') %>">
-  <meta name="title" content="VinK" />
-  <meta name="description" content="Website for Vietnamese students in Korea" />
+  <meta name="title" content="VinK"/>
+  <meta name="description" content="Website for Vietnamese students in Korea"/>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= favicon_link_tag 'apple-touch-icon.png',
                        rel: 'apple-touch-icon', type: 'image/png' %>
@@ -51,7 +55,7 @@
   run before or after DOMContentLoaded. Expose a flag, so it can
   initialize correctly. %>
     <script data-turbolinks-eval="false">
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         (window.App = window.App || {}).DOMContentLoadedFired = true;
       });
     </script>
