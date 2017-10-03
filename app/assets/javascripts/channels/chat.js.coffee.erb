@@ -21,7 +21,6 @@ render_other_user_message = (data) ->
   $('#other_user_template .vink-messages-unit-profile').html "<img src='" + data.profile_image + "' alt='pro'>";
   template = $('#other_user_template').html()
   $('#vink_messages').append template
-  $('#message_content').val('');
   $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight)
   return
 
