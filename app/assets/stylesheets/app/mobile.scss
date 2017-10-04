@@ -139,4 +139,18 @@
     color: #ffd400;
     font-size: 7px;
   }
+  .thredded--pagination {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .thredded--pagination > span {
+    margin-right: auto;
+  }
+  .thredded--pagination > span.last {
+    margin-right: 0px;
+  }
+  .thredded--pagination > span.current, .thredded--pagination > span > a {
+    padding: 3px;
+    font-size: 14px;
+  }
 }

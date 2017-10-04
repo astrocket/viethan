@@ -21,6 +21,13 @@ vi:
   common:
     time_ago: "%{time} 전"
     general: Chung
+  views:
+    pagination:
+      truncate: '..'
+      next: '->'
+      previous: '<-'
+      last: end
+      first: '1'
   pages:
     home:
       introduction: VietsINKorea.com là một trang web chia sẻ tất tần tật các thông tin liên quan đến du học Hàn Quốc.  Tại đây các bạn có thể cùng nhau hỏi đáp các vấn đề liên quan đến du học Hàn Quốc.
@@ -155,8 +162,8 @@ vi:
       edit: :thredded.nav.edit_post
       form:
         content_label: Nội dung
-        create_btn: Đệ trình
-        create_btn_submitting: Đệ trình...
+        create_btn: Đăng tải
+        create_btn_submitting: Đăng tải...
         title_label: Thêm bài đăng
         update_btn: Cập nhật một bài đăng
         update_btn_submitting: :thredded.form.update_btn_submitting
@@ -242,9 +249,9 @@ vi:
       form:
         categories_placeholder: Categories
         content_label: :thredded.posts.form.content_label
-        create_btn: Đệ trình
+        create_btn: Đăng tải
         messageboard_label: Messageboard
-        title_label: Chức vụ
+        title_label: Chủ đề
         title_placeholder: :thredded.topics.form.title_label
         title_placeholder_start: Bắt đầu một chủ đề mới
         update_btn: Update Topic

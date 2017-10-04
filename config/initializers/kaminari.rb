@@ -1,6 +1,7 @@
 # needed to get will paginate to work with kaminari
 Kaminari.configure do |config|
   config.page_method_name = :per_page_kaminari
+  config.window = 2
 end
 
 # an initializer to handle conflicting kaminari and will_paginate methods
