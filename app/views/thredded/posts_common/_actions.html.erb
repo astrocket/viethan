@@ -2,6 +2,7 @@
 <% actions_html = capture do %>
   <%= view_hooks.post_common.actions.render self, post: post do %>
     <% if actions[:quote] && post.can_reply? %>
+        <%= render 'thredded/posts_common/actions/reply', post: post %>
       <%= render 'thredded/posts_common/actions/quote', post: post %>
     <% end  %>
     <% if post.can_update? %>

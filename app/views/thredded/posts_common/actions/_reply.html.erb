@@ -1,0 +1,3 @@
+<%= link_to t('thredded.posts.reply'), "/replies/new?parent_post_id=#{post.to_model.id}",
+            remote: true,
+            class: 'thredded--post--quote thredded--post--dropdown--actions--item' %>

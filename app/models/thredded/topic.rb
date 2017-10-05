@@ -93,6 +93,12 @@ module Thredded
       raise Thredded::Errors::TopicNotFound
     end
 
+    def get_parent_replies
+      post_ids = posts.where(parent_post_id: nil).pluck(:id)
+      ids = post_ids - [self.first_post.id]
+      posts.where(id: ids)
+    end
+
     class << self
       private
 

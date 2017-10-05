@@ -16,7 +16,7 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook]
 
   def destroy
-    update(email: "deleted-#{email}", uid: "deleted-#{uid}", mid: "deleted-#{mid}", display_name: "unknown", image: "deleted-#{image}")
+    update(email: "deleted-#{email}", uid: "deleted-#{uid}", mid: "deleted-#{mid}", display_name: "n/a-#{id}", image: "vink_favicon.png")
   end
 
   def self.from_omniauth(auth)

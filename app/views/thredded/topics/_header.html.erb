@@ -30,3 +30,5 @@
   <% end %>
   <%= render partial: 'thredded/topics/followers', locals: {topic: topic} %>
 </header>
+<%= render('thredded/posts/content', post: topic.to_model.first_post) %>
+<hr class="mt-4 mb-4">
