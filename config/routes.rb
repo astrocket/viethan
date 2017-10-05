@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'replies/new'
+  post 'replies/create'
+
   resources :messages
   resources :chats
   mount RailsAdmin::Engine => '/astrocket', as: 'rails_admin'

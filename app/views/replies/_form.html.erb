@@ -1,0 +1,14 @@
+<form action="/replies/create" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="parent_post_id" value="<%= @reply.parent_post_id %>">
+  <ul class="thredded--form-list">
+    <li>
+      <textarea name="reply[content]" id="reply-content" rows="2" required="true" style="overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea>
+    </li>
+    <li>
+      <button type="submit" class="thredded--form--submit">
+        <%= t('thredded.posts.reply_submit') %>
+      </button>
+    </li>
+  </ul>
+</form>

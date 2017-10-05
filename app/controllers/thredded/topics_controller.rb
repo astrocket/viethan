@@ -37,16 +37,18 @@ module Thredded
     def show
       authorize topic, :read?
       return redirect_to(canonical_topic_params) unless params_match?(canonical_topic_params)
-      page_scope = policy_scope(topic.posts)
+      page_scope = policy_scope(topic.get_parent_replies)
                        .order_oldest_first
                        .includes(:user, :messageboard, :postable)
                        .page(current_page)
       @posts = Thredded::TopicPostsPageView.new(thredded_current_user, topic, page_scope)
 
-      if thredded_signed_in?
-        Thredded::UserTopicReadState.touch!(
-            thredded_current_user.id, topic.id, page_scope.last, current_page
-        )
+      if page_scope.present?
+        if thredded_signed_in?
+          Thredded::UserTopicReadState.touch!(
+              thredded_current_user.id, topic.id, page_scope.last, current_page
+          )
+        end
       end
 
       @new_post = Thredded::PostForm.new(user: thredded_current_user, topic: topic, post_params: new_post_params)
@@ -157,18 +159,18 @@ module Thredded
     private
 
     def canonical_messageboard_params
-      { messageboard_id: messageboard.slug }
+      {messageboard_id: messageboard.slug}
     end
 
     def canonical_topic_params
-      { messageboard_id: messageboard.slug, id: topic.slug }
+      {messageboard_id: messageboard.slug, id: topic.slug}
     end
 
     def follow_change_response(following:)
       notice = following ? t('thredded.topics.followed_notice') : t('thredded.topics.unfollowed_notice')
       respond_to do |format|
         format.html { redirect_to messageboard_topic_url(messageboard, topic), notice: notice }
-        format.json { render(json: { follow: following }) }
+        format.json { render(json: {follow: following}) }
       end
     end
 

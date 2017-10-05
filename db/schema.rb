@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170929071227) do
+ActiveRecord::Schema.define(version: 20171005170629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,9 +135,11 @@ ActiveRecord::Schema.define(version: 20170929071227) do
     t.integer "moderation_state", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "parent_post_id"
     t.index "to_tsvector('english'::regconfig, content)", name: "thredded_posts_content_fts", using: :gist
     t.index ["messageboard_id"], name: "index_thredded_posts_on_messageboard_id"
     t.index ["moderation_state", "updated_at"], name: "index_thredded_posts_for_display"
+    t.index ["parent_post_id"], name: "index_thredded_posts_on_parent_post_id"
     t.index ["postable_id"], name: "index_thredded_posts_on_postable_id"
     t.index ["postable_id"], name: "index_thredded_posts_on_postable_id_and_postable_type"
     t.index ["user_id"], name: "index_thredded_posts_on_user_id"
@@ -197,6 +199,7 @@ ActiveRecord::Schema.define(version: 20170929071227) do
     t.datetime "last_post_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "news", default: false
     t.index "to_tsvector('english'::regconfig, (title)::text)", name: "thredded_topics_title_fts", using: :gist
     t.index ["hash_id"], name: "index_thredded_topics_on_hash_id"
     t.index ["messageboard_id"], name: "index_thredded_topics_on_messageboard_id"

@@ -102,11 +102,8 @@ a:hover {
 
 .thredded--post {
   padding-left: 15px;
-  border-left: 3px solid #cbcbcb;
-}
-.thredded--post#post_1 {
-  padding-left: 0px;
-  border-left: none;
+  border-left: 2px solid #cbcbcb;
+  margin-bottom: 1.5rem;
 }
 .thredded--post .thredded--post--user {
   font-size: 14px;
@@ -116,7 +113,6 @@ a:hover {
   border: 1px solid #ececec;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .thredded--topic-header--follow-info form.thredded--topic-header--follow-info--unfollow {
   top: 0px;
@@ -172,4 +168,15 @@ a:hover {
 
 .thredded--pagination {
   padding-bottom: 1.5rem;
+}
+.thredded--post--avatar {
+  left: 0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 1.75rem;
+  margin-right: 0.4375em;
+  position: relative;
+  top: 6px;
+  vertical-align: baseline;
+  width: 1.75rem;
 }

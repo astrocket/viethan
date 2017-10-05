@@ -1,0 +1,5 @@
+$('#render_reply_form_<%= @parent_post.id %>').append("<%= render_posts @post_form.post,
+                     partial: 'thredded/posts/post',
+                     content_partial: 'thredded/posts/content',
+                     locals: { actions: { quote: true } } %>");
+$('#render_reply_form<%= @parent_post.id %>').slideUp(350);
