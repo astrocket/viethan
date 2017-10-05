@@ -15,6 +15,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  def destroy
+    update(email: "deleted-#{email}", uid: "deleted-#{uid}", mid: "deleted-#{mid}", display_name: "unknown", image: "deleted-#{image}")
+  end
+
   def self.from_omniauth(auth)
     if exists?(provider: auth.provider, uid: auth.uid)
       where(provider: auth.provider, uid: auth.uid).first

@@ -2,7 +2,7 @@ class Chat < ApplicationRecord
 
   after_create :generate_intro_message
   belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def recent_message
     self.messages.last

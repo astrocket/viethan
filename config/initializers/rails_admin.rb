@@ -1,6 +1,4 @@
 RailsAdmin.config do |config|
-  require 'i18n'
-  I18n.default_locale = :en
   ### Popular gems integration
 
   ## == Devise ==
@@ -44,4 +42,10 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'User' do
+    exclude_fields :thredded_user_preference
+  end
+
+
 end
