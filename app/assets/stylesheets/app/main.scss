@@ -147,6 +147,11 @@ a:hover {
     padding: 10px;
     background-color: transparent;
   }
+  .vink-post-unit-content {
+    max-width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+  }
   .vink-post-unit-profile img {
     border-radius: 50%;
     display: inline-block;
@@ -179,4 +184,12 @@ a:hover {
   top: 6px;
   vertical-align: baseline;
   width: 1.75rem;
+}
+
+.vink-overflow-scroll-box {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.vink-overflow-scroll-content {
+  min-width: 760px;
 }

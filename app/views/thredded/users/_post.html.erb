@@ -9,7 +9,7 @@
           <% if post.to_model.first_post_in_topic? %>
               <%= image_tag post.to_model.postable.cover_image.url(:xhdpi_4by3), class: 'img-fluid' %>
           <% else %>
-              <%= content %>
+              <%= content.gsub(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/, '').html_safe %>
           <% end %>
         </div>
     <% end %>
