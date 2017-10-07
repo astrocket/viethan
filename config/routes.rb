@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'news' => 'news#index'
+
   get 'replies/new'
   post 'replies/create'
 

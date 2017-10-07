@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005170629) do
+ActiveRecord::Schema.define(version: 20171006004607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -200,6 +200,10 @@ ActiveRecord::Schema.define(version: 20171005170629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "news", default: false
+    t.string "cover_image_file_name"
+    t.string "cover_image_content_type"
+    t.integer "cover_image_file_size"
+    t.datetime "cover_image_updated_at"
     t.index "to_tsvector('english'::regconfig, (title)::text)", name: "thredded_topics_title_fts", using: :gist
     t.index ["hash_id"], name: "index_thredded_topics_on_hash_id"
     t.index ["messageboard_id"], name: "index_thredded_topics_on_messageboard_id"

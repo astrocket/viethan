@@ -3,5 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @posts_page_view = Thredded::PostsPageView.new(current_user, Thredded::Post.last(15).reverse!)
+    @news = Thredded::Topic.where(news: true)
   end
 end

@@ -35,7 +35,7 @@ a:hover {
 }
 
 .page-options {
-  position: absolute;
+  position: fixed;
   right: 15px;
   top: 15px;
 }
@@ -147,7 +147,7 @@ a:hover {
     padding: 10px;
     background-color: transparent;
   }
-  img {
+  .vink-post-unit-profile img {
     border-radius: 50%;
     display: inline-block;
     height: 1.75em;

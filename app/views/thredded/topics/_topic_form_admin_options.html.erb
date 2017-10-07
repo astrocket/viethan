@@ -6,7 +6,11 @@
     <% end %>
 
     <%= form.label :sticky do %>
-      <%= form.check_box :sticky %> <%= t 'thredded.topics.sticky.label' %>
+        <%= form.check_box :sticky %> <%= t 'thredded.topics.sticky.label' %>
+    <% end %>
+
+    <%= form.label :news do %>
+        <%= form.check_box :news %> <%= t 'thredded.topics.news.label' %>
     <% end %>
   </li>
 <% end %>

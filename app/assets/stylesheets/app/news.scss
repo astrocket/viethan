@@ -1,0 +1,56 @@
+// Place all the styles related to the news controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.vink-news-box {
+  max-height: 250px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.vink-news-box .card-img-overlay { z-index: 3; }
+
+.vink-news-box-link .card-img {
+  object-fit: cover;
+}
+
+.vink-news-box-image-shade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.vink-news-box-link:hover .vink-news-box-image-shade {
+  background-color: rgba(0,0,0,0.8);
+}
+.vink-news-box-image-icon {
+  position: absolute;
+  bottom: calc( 15px - 70% );
+  left: calc( 50% - 15px );
+  font-size: 40px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.vink-news-box-link:hover .vink-news-box-image-icon {
+  bottom: calc( 50% - 30px );
+}
+
+@media (max-width: 48rem) {
+  .vink-news-box {
+    max-height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  .vink-news-box .card-title {
+    font-size: 16px;
+  }
+  .vink-news-box .card-info {
+    font-size: 13px;
+  }
+}
+

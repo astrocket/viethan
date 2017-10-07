@@ -29,6 +29,10 @@
       </div>
       <div class="card-footer bg-transparent">
         <% if user == current_user %>
+            <% unless user.bot_subscription %>
+                <%= render :partial => "components/facebook_subscription" %>
+                <hr>
+            <% end %>
             <%= link_to t('nav.edit_my_account'), edit_user_registration_path, class: 'btn btn-outline-warning btn-block' %>
         <% else %>
             <%= link_to t('nav.send_message'), "/forum/private-topics/new?target_user=#{user.display_name}", class: 'btn btn-outline-warning btn-block' %>

@@ -137,7 +137,7 @@ Thredded.layout = 'application'
 #
 # By default, a user will be subscribed to (follow) a topic they post in. Uncomment this to not subscribe them:
 #
-Thredded.auto_follow_when_posting_in_topic = false
+Thredded.auto_follow_when_posting_in_topic = true
 #
 # By default, a user will be subscribed to the topic they get @-mentioned in.
 # Individual users can disable this in the Notification Settings.

@@ -17,7 +17,9 @@
               </div>
           <% else %>
               <div class="d-flex vink-messages-unit-profile">
-                <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+                <%= link_to user_path(message.user) do %>
+                    <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+                <% end %>
               </div>
           <% end %>
         </div>
@@ -33,7 +35,9 @@
               </div>
           <% else %>
               <div class="d-flex vink-messages-unit-profile">
-                <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+                <%= link_to user_path(message.user) do %>
+                    <%= image_tag "#{Thredded.avatar_url.call(message.user)}" %>
+                <% end %>
               </div>
           <% end %>
           <p class="vink-messages-unit-body"><%= message.content %></p>

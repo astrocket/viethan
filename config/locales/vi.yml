@@ -28,6 +28,8 @@ vi:
       previous: '<-'
       last: end
       first: '1'
+  news:
+    read_counting: người đã đọc
   pages:
     home:
       introduction: VietsINKorea.com là một trang web chia sẻ tất tần tật các thông tin liên quan đến du học Hàn Quốc.  Tại đây các bạn có thể cùng nhau hỏi đáp các vấn đề liên quan đến du học Hàn Quốc.
@@ -53,7 +55,7 @@ vi:
       feature:
         one: Hỏi thông tin
         two: Nhận thông báo về bài đăng của bạn.
-      start: Trò  chuyện
+      start: Kết nối
   thredded:
     content_moderation_states:
       content_blocked_notice: Blocked
@@ -274,6 +276,8 @@ vi:
       unfollow: Chặn thông báo fb sau khi trả lời
       unfollowed_notice: You are no longer following this topic
       updated_notice: Topic updated
+      news:
+        label: News
     users:
       currently_online: Currently Online
       last_active_html: "Hoạt động cuối %{time_ago}"
