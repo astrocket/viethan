@@ -157,6 +157,7 @@ a:hover {
     display: inline-block;
     height: 1.75em;
     width: 1.75em;
+    object-fit: contain;
   }
   .thredded--post--content {
     font-size: 14px;
@@ -184,6 +185,7 @@ a:hover {
   top: 6px;
   vertical-align: baseline;
   width: 1.75rem;
+  object-fit: contain;
 }
 
 .vink-overflow-scroll-box {
