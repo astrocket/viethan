@@ -32,10 +32,10 @@ class User < ApplicationRecord
       create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.email = auth.info.email || "#{SecureRandom.hex}@vietsinkorea.com"
+        user.email = auth.info.email || "#{Time.now.strftime("%Y%m%d%H%M%S") + SecureRandom.hex(4)}@vietsinkorea.com"
         user.password = Devise.friendly_token[0,20]
         user.display_name = auth.info.name   # assuming the user model has a name
-        user.image = auth.info.image # assuming the user model has an image
+        user.image = auth.info.image.gsub('http://', 'https://') # assuming the user model has an image
       end
     end
   end
