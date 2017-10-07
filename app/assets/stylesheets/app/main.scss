@@ -187,7 +187,10 @@ a:hover {
   width: 1.75rem;
   object-fit: contain;
 }
-
+.thredded--currently-online--avatar {
+  background-color: white;
+  object-fit: contain;
+}
 .vink-overflow-scroll-box {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
