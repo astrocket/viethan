@@ -1,0 +1,13 @@
+<a href="/forum/<%= topic.messageboard.slug %>/<%= topic.slug %>" class="vink-news-box-link">
+  <div class="card text-white vink-news-box">
+    <%= image_tag topic.cover_image.url(:xhdpi_4by3), class: 'card-img' %>
+    <div class="card-img-overlay d-flex flex-column justify-content-between">
+      <h4 class="card-title"><%= topic.title %></h4>
+      <p class="card-text card-info text-right"><%= topic.user_read_states.count %> <%= t('news.read_counting') %> | <%= time_ago topic.created_at %></p>
+    </div>
+    <div class="card-img-top vink-news-box-image-shade"></div>
+    <div class="vink-news-box-image-icon">
+      <i class="icon ion-ios-search"></i>
+    </div>
+  </div>
+</a>

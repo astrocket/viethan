@@ -77,6 +77,8 @@ gem 'omniauth-facebook'
 gem 'facebook-messenger'
 gem 'rails_admin', '~> 1.2'
 gem 'record_tag_helper', '~> 1.0'
+gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3.0'
 
 ## Deploy
 gem 'figaro'

@@ -1,4 +1,11 @@
 <p><%= t('pages.home.introduction') %></p>
+<div class="home-news-slide">
+  <% @news.each do |topic| %>
+      <div class="home-news-slide-card mb-4">
+        <%= render 'news/news', topic: topic %>
+      </div>
+  <% end %>
 
+</div>
 <%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
                                            locals: {posts: @posts_page_view} %>

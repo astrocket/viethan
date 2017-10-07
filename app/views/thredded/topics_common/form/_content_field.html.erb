@@ -4,5 +4,6 @@
       <%= render 'thredded/posts_common/form/before_content', form: form %>
       <%= form.text_area :content, {rows: 5, required: true} %>
       <%= render 'thredded/posts_common/form/after_content', form: form %><hr>
+      <%= form.file_field :cover_image %>
   <% end %>
 </li>

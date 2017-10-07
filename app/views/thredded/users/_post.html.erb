@@ -6,7 +6,11 @@
     <%= link_to(post.permalink_path, class: 'vink-link') do %>
         <h6 class="card-title"><%= post.to_model.postable.title %></h6>
         <div class="vink-post-unit-content d-flex flex-row justify-content-between align-items-center">
-          <%= content %>
+          <% if post.to_model.first_post_in_topic? %>
+              <%= image_tag post.to_model.postable.cover_image.url(:xhdpi_4by3), class: 'img-fluid' %>
+          <% else %>
+              <%= content %>
+          <% end %>
         </div>
     <% end %>
   </div>

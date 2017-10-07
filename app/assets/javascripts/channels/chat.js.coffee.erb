@@ -7,7 +7,7 @@ render_current_user_message = (data) ->
   $('#current_user_template .vink-messages-unit-body').html data.message.content
   $('#current_user_template .vink-messages-time').html current_time();
   $('#current_user_template .vink-messages-unread').html data.sender.display_name;
-  $('#current_user_template .vink-messages-unit-profile').html "<img src='" + data.profile_image + "' alt='pro'>";
+  $('#current_user_template .vink-messages-unit-profile').html "<a href='/users/" + data.sender.id + "'><img src='" + data.profile_image + "' alt='pro'></a>";
   template = $('#current_user_template').html()
   $('#vink_messages').append template
   $('#message_content').val('');
@@ -18,7 +18,7 @@ render_other_user_message = (data) ->
   $('#other_user_template .vink-messages-unit-body').html data.message.content
   $('#other_user_template .vink-messages-time').html current_time();
   $('#other_user_template .vink-messages-unread').html data.sender.display_name;
-  $('#other_user_template .vink-messages-unit-profile').html "<img src='" + data.profile_image + "' alt='pro'>";
+  $('#other_user_template .vink-messages-unit-profile').html "<a href='/users/" + data.sender.id + "'><img src='" + data.profile_image + "' alt='pro'></a>";
   template = $('#other_user_template').html()
   $('#vink_messages').append template
   $("#vink_messages").scrollTop($("#vink_messages")[0].scrollHeight)

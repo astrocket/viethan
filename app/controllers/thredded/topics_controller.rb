@@ -168,6 +168,8 @@ module Thredded
 
     def follow_change_response(following:)
       notice = following ? t('thredded.topics.followed_notice') : t('thredded.topics.unfollowed_notice')
+      redirect_to '/chat_bot/index' and return unless thredded_current_user.bot_subscription
+
       respond_to do |format|
         format.html { redirect_to messageboard_topic_url(messageboard, topic), notice: notice }
         format.json { render(json: {follow: following}) }
@@ -192,13 +194,13 @@ module Thredded
     def topic_params
       params
           .require(:topic)
-          .permit(:title, :locked, :sticky, category_ids: [])
+          .permit(:title, :locked, :sticky, :news, :cover_image, category_ids: [])
     end
 
     def topic_params_for_update
       params
           .require(:topic)
-          .permit(:title, :locked, :sticky, :messageboard_id, category_ids: [])
+          .permit(:title, :locked, :sticky, :messageboard_id, :news, :cover_image, category_ids: [])
     end
 
     def current_page

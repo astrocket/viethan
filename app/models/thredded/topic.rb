@@ -83,6 +83,10 @@ module Thredded
                  on: :update,
                  if: -> { previous_changes.include?('messageboard_id') }
 
+    has_attached_file :cover_image, styles: {xhdpi_4by3: "1200x800>", medium: "720x540>", thumb: "160x160>"}, path: ":rails_root/public/system/news/:class/:topic_name/:attachment/:style/:filename", :preserve_files => true
+    validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\Z/
+
+
     # Finds the topic by its slug or ID, or raises Thredded::Errors::TopicNotFound.
     # @param slug_or_id [String]
     # @return [Thredded::Topic]
