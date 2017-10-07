@@ -175,6 +175,7 @@ a:hover {
 .thredded--pagination {
   padding-bottom: 1.5rem;
 }
+
 .thredded--post--avatar {
   left: 0;
   border-radius: 50%;
@@ -187,7 +188,7 @@ a:hover {
   width: 1.75rem;
   object-fit: contain;
 }
-.thredded--currently-online--avatar {
+.thredded--currently-online--avatar, .thredded--user--avatar {
   background-color: white;
   object-fit: contain;
 }
