@@ -21,7 +21,7 @@
       <% end %>
     </div>
     <div class="vink-post-unit-profile d-flex flex-row justify-content-end align-items-center">
-      <span class="vink-post-unit-time-ago"><%= post.postable.user_read_states.count %> <%= t('news.read_counting') %> | <%= time_ago post.created_at %></span>&nbsp;|&nbsp;
+      <span class="vink-post-unit-time-ago"><%= post.to_model.postable.user_read_states.count %> <%= t('news.read_counting') %> | <%= time_ago post.created_at %></span>&nbsp;|&nbsp;
       <%= link_to user_path(post.user), class: 'vink-link d-flex align-items-center' do %>
           <span><%= post.user.display_name %>&nbsp;</span><%= image_tag Thredded.avatar_url.call(post.user) %>
       <% end %>
