@@ -1,7 +1,7 @@
 server '13.125.6.186', user: 'deploy', roles: %w{app db web}
 set :nginx_server_name, 'vietsinkorea.com'
 
-# server-based syntax
+# server-based syntax.
 # ======================
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
