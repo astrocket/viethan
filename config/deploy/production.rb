@@ -62,5 +62,3 @@ set :nginx_server_name, 'vietsinkorea.com'
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-
-cd /home/deploy/apps/capistrano-astro/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RACK_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec pumactl -S /home/deploy/apps/capistrano-astro/shared/tmp/pids/puma.state -F /home/deploy/apps/capistrano-astro/shared/puma.rb restart )
