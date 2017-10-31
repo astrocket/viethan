@@ -1,4 +1,4 @@
-server '13.124.217.111', user: 'deploy', roles: %w{app db web}
+server '13.124.92.239', user: 'deploy', roles: %w{app db web}
 set :nginx_server_name, 'vietsinkorea.com'
 
 # server-based syntax.
